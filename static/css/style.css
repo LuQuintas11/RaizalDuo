@@ -26,7 +26,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #161617;
 }
 
 .card {
@@ -47,7 +47,7 @@ body {
 }
 
 .author {
-    color: rgb(201, 37, 37);
+    color: rgb(240, 28, 28);
     margin: 4px;
     text-transform: uppercase;
 }
@@ -142,7 +142,7 @@ body {
 }
 
 
-.body{
+#body{
     background-color: #111212;
 }
 
