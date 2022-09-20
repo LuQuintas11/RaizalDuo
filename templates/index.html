@@ -14,10 +14,11 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+                                
+                                <img class="card-img-top" src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>

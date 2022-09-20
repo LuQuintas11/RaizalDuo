@@ -1,7 +1,9 @@
-body {
+/* body {
+    background-color: #111212;
+} */
+*{
     background-color: #111212;
 }
-
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -25,9 +27,9 @@ body {
     background-color: #445261;
 }
 
-.main-bg {
-    background-color: #161617;
-}
+/* #main{
+    background-color: #111212;
+} */
 
 .card {
     border: none;
