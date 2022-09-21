@@ -12,7 +12,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
-    image = models.ImageField(blank=True, upload_to='raizalduo')
+    image = models.ImageField(blank=True, upload_to='website')
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
