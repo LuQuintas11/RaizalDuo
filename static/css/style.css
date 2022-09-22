@@ -158,10 +158,30 @@ img:hover{
 
 img{
     border-radius: 2%;
-    width: 50%;
-    height: 1000px;
-    margin: 0 100px;
+    width: 250px;
+    max-height: 250px;
+    
+}
+
+
+.row{
+   
+    padding-left: 0px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+
 
 }
+
+
+footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;   /* Height of the footer */
+        background: #6cf;
+     }
 
 

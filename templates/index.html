@@ -9,25 +9,19 @@
         <div class="col-12 mt-3 ">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
+                    <div class=" col-md-3 card mb-4">
+                            
                                 {% if "placeholder" in post.featured_image.url %}
                                 <h3>Succesfully uploaded : {{img_obj.title}}</h3>
-                                
-                                <img class="card-img-top" src="{{post.image.url}}" alt="connect" style="max-height:300px">
+                                <img class="card-img-top" src="{{post.image.url}}" alt="connect" style="max-height:6000px">
                                 {% else %}
-                                <img src="{{ post.image.url}}" alt="connect" style="max-height:300px">
+                                <img src="{{ post.image.url}}" alt="connect" style="max-height:600px">
                                 {% endif %}
                                 <div class="image-flash">
                                     <a href="{% url 'post_detail' post.slug  %}" class="post-link">  <p class="author"> {{ post.title }}</p></a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:2 %}
+                {% if forloop.counter|divisibleby:4 %} 
             </div>
             <div class="row">
                 {% endif %}
