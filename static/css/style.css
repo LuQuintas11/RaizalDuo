@@ -1,11 +1,11 @@
-/* body {
-    background-color: #111212;
+ /* body {
+    background-color:brown transparent;
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Dosis:wght@200&display=swap');
 
 *{
-    background-color: #111212;
+    background-color: linear-gradient(to bottom, #b20808 0%, #e9674d 100%)
 }
 .brand {
     font-family: Lato, sans-serif;
@@ -19,7 +19,15 @@
 }
 
 .thin {
-    font-weight: 300;
+    font-weight: 900;
+    font-family:"Caveat";
+    color: #fff;
+    font-size: 30px;
+
+
+}
+.navbar-brand{
+    text-align: center;
 }
 
 .light-bg {
@@ -49,12 +57,25 @@
 }
 
 p{
+    color: #e8ebed;
     background-color: #212529;
+    font-size: 25px;
+    font-family:"Caveat";
 }
- 
+
+.text{
+    margin-bottom: 100px;
+    height: 500px;
+    width: 65%;
+    text-align: center;
+    margin:0px auto;
+}
+
+
 hr{
     border: 1px solid grey;
     width: 100%;
+    margin-top: 100px;
 }
 .image-flash:hover{
     transform: scale(1.1);
@@ -63,7 +84,7 @@ hr{
 .author {
     color: rgb(243, 239, 239);
     text-transform: uppercase;
-    font-family: 'Dosis';
+    font-family:"Caveat";
     font-size: 25px;
     font-weight: bolder;
     text-decoration: underline;
@@ -187,8 +208,8 @@ img{
 .row{
    
   
-    position:fixed;
-    bottom:100px;
+   
+
     right:50px;
     left:50px;
     background-color: #212529;
@@ -197,15 +218,6 @@ img{
 
 
 }
-
-
-footer{
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 60px;   /* Height of the footer */
-        background: #6cf;
-     }
 
 
 .card1{
@@ -219,9 +231,24 @@ footer{
 .music{
     color: rgb(243, 239, 239);
     text-transform: uppercase;
-    font-family: "Dosis";
+    font-family:"Caveat";
     font-weight: 800;
     font-size: 40px;
     text-align: center;
     background-color: #212529;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.video {
+
+    margin: 0px auto;
+
+}
+
+.row-video{
+ max-height: 500px;
 }
