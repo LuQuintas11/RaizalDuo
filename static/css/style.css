@@ -7,6 +7,14 @@
 *{
     background-color: linear-gradient(to bottom, #b20808 0%, #e9674d 100%)
 }
+
+body{
+    background: linear-gradient(#808082ba, #6c596ccc), url("/media/images/WhatsApp\ Image\ 2022-09-23\ at\ 22.13.34.jpeg")
+}
+
+.body{
+    background-color: linear-gradient(to bottom, #b20808 0%, #e9674d 100%)
+}
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -34,9 +42,9 @@
     background-color: #fff;
 }
 
-.dark-bg {
+/* .dark-bg {
     background-color: #445261;
-}
+} */
 
 /* #main{
     background-color: #111212;
@@ -53,12 +61,12 @@
 
 .image-flash{
     text-align: center;
-    background-color: #212529;
+    
 }
 
 p{
-    color: #e8ebed;
-    background-color: #212529;
+    color: #dbd6d6;
+    font-weight: 500;
     font-size: 25px;
     font-family:"Caveat";
 }
@@ -73,7 +81,7 @@ p{
 
 
 hr{
-    border: 1px solid grey;
+    border: 1px solid rgb(11, 11, 11);
     width: 100%;
     margin-top: 100px;
 }
@@ -82,11 +90,11 @@ hr{
 }
 
 .author {
-    color: rgb(243, 239, 239);
+    color: #dbd6d6;
     text-transform: uppercase;
     font-family:"Caveat";
     font-size: 25px;
-    font-weight: bolder;
+    font-weight: 900;
     text-decoration: underline;
 
 
@@ -184,9 +192,7 @@ hr{
 }
 
 
-#body{
-    background-color: #212529;
-}
+
 
 img:hover{
     transform: scale(1.1);
@@ -206,36 +212,26 @@ img{
 
 
 .row{
-   
-  
-   
-
     right:50px;
     left:50px;
-    background-color: #212529;
-
-    
-
 
 }
 
 
 .card1{
     margin:0px auto ;
-    background-color: #212529;
     
-
 }
 
 
 .music{
-    color: rgb(243, 239, 239);
+    color:#dbd6d6  ;
     text-transform: uppercase;
     font-family:"Caveat";
     font-weight: 800;
     font-size: 40px;
     text-align: center;
-    background-color: #212529;
+   
 }
 
 iframe {
@@ -251,4 +247,9 @@ iframe {
 
 .row-video{
  max-height: 500px;
+}
+
+h3{
+    color: #b20808;
+    font-size: 50px;
 }

@@ -13,10 +13,22 @@
                       ferias, festivales y conciertos en Córdoba Capital, Cosquín, La Falda, Río Ceballos, Villa María y La Rioja Capital. Entre ellos se destacan la Peña Oficial de la Chaya 2022, Patio de la Pirincha junto a Mery Murúa y José Luis Aguirre, Ciclo Cosquín de Lunas Musicales 2021, Ciclo de Cultura Córdoba "Cultura en el Patio". 
                 </p>
             </div>
-
+         
         </div>
+    <div class="row">
+        <div class="col-md-12 show">
+       
+       {% for show in shows_list  %}
+         <h3>{{ show.title }}</h3>
+       {% endfor %}
+        
+      
+    </div>
+    </div>
+
 
     </div>
+
 <div class="container-fluid">
 
 

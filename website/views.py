@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post
+from .models import Post, Shows
 
 
 class PostList(generic.ListView):
@@ -29,3 +29,22 @@ class PostDetail(View):
                 "liked": liked
             },
         )
+
+class ShowList(generic.ListView):
+    model = Shows
+    queryset = Shows.objects.filter(status=1).order_by("-created_on")
+    template_name = "index.html"
+    paginate_by = 6
+
+def get_data(request):
+
+    my_data = ShowList.objects.all() #for all the records 
+    one_data = ShowList.objects.get(pk=1) # 1 will return the first item change it depending on the data you want 
+    context={
+       
+      'my_data':my_data,
+      'one_data':one_data,
+    
+    } 
+
+    return render(request, 'index.html', context)
