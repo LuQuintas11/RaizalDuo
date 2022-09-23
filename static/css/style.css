@@ -30,12 +30,18 @@ body{
     font-weight: 900;
     font-family:"Caveat";
     color: #fff;
-    font-size: 30px;
-
+    font-size: 60px;
+    margin: 0px 25px 0px 25px;
 
 }
-.navbar-brand{
-    text-align: center;
+
+
+
+.container-fluid1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:0px auto;
 }
 
 .light-bg {
@@ -205,9 +211,7 @@ img{
     max-height: 450px;
     margin:10px;
     
-    
 
-    
 }
 
 
@@ -252,4 +256,15 @@ iframe {
 h3{
     color: #b20808;
     font-size: 50px;
+
+}
+
+
+li>a{
+    color:white;
+}
+
+.nav-link{
+    font-family: "Caveat";
+    font-size: 25px;
 }
