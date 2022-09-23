@@ -1,6 +1,9 @@
 /* body {
     background-color: #111212;
 } */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
 *{
     background-color: #111212;
 }
@@ -40,22 +43,33 @@
     position: relative;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
+.image-flash{
+    text-align: center;
+    background-color: #212529;
 }
 
+p{
+    background-color: #212529;
+}
+ 
+hr{
+    border: 1px solid grey;
+    width: 100%;
+}
 .image-flash:hover{
     transform: scale(1.1);
 }
 
 .author {
-    color: rgb(16, 15, 15);
-    margin: 4px;
+    color: rgb(243, 239, 239);
     text-transform: uppercase;
+    font-family: 'Dosis';
+    font-size: 25px;
+    font-weight: bolder;
+    text-decoration: underline;
+
+
+
 }
 
 .masthead {
@@ -91,11 +105,12 @@
     transform: skew(15deg);
     z-index: 100;
 }
-
+ 
 .post-link {
     text-decoration: none;
     color: #445261;
-}
+    border-radius: 50%;
+} 
 
 .post-link:hover,
 .page-link {
@@ -149,7 +164,7 @@
 
 
 #body{
-    background-color: #111212;
+    background-color: #212529;
 }
 
 img:hover{
@@ -158,18 +173,26 @@ img:hover{
 
 img{
     border-radius: 2%;
-    width: 250px;
-    max-height: 250px;
+    border: 1px solid white;
+    width: 350px;
+    max-height: 450px;
+    margin:10px;
+    
+    
+
     
 }
 
 
 .row{
    
-    padding-left: 0px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  
+    position:fixed;
+    bottom:100px;
+    right:50px;
+    left:50px;
+    background-color: #212529;
+
     
 
 
@@ -185,3 +208,20 @@ footer{
      }
 
 
+.card1{
+    margin:0px auto ;
+    background-color: #212529;
+    
+
+}
+
+
+.music{
+    color: rgb(243, 239, 239);
+    text-transform: uppercase;
+    font-family: "Dosis";
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    background-color: #212529;
+}

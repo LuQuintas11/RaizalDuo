@@ -8,19 +8,22 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 ">
             <div class="row">
+                <hr>
+                <h2 class="music">MUSIC</h2>
                 {% for post in post_list %}
-                    <div class=" col-md-3 card mb-4">
-                            
+                    <div class=" col-md-3 card mb-4 card1">
+                       
                                 {% if "placeholder" in post.featured_image.url %}
+
                                 <h3>Succesfully uploaded : {{img_obj.title}}</h3>
-                                <img class="card-img-top" src="{{post.image.url}}" alt="connect" style="max-height:6000px">
+                        
+                                <img class="card-img-top" src="{{post.image.url}}" alt="connect" style="max-height:600px">
                                 {% else %}
                                 <img src="{{ post.image.url}}" alt="connect" style="max-height:600px">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <a href="{% url 'post_detail' post.slug  %}" class="post-link">  <p class="author"> {{ post.title }}</p></a>
-                                </div>
+                                 <a href="{% url 'post_detail' post.slug  %}" class="post-link image-flash">  <p class="author"> {{ post.title }}</p></a>
                             </div>
+                            
                 {% if forloop.counter|divisibleby:4 %} 
             </div>
             <div class="row">
