@@ -9,6 +9,13 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+class ShowList(generic.ListView):
+    model = Shows
+    context_object_name = 'shows'
+    queryset = Shows.objects.filter(status=1).order_by("-created_on")
+    template_name = "index.html"
+    paginate_by = 6
+
 
 class PostDetail(View):
 
@@ -30,21 +37,6 @@ class PostDetail(View):
             },
         )
 
-class ShowList(generic.ListView):
-    model = Shows
-    queryset = Shows.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
-    paginate_by = 6
 
-def get_data(request):
 
-    my_data = ShowList.objects.all() #for all the records 
-    one_data = ShowList.objects.get(pk=1) # 1 will return the first item change it depending on the data you want 
-    context={
-       
-      'my_data':my_data,
-      'one_data':one_data,
-    
-    } 
 
-    return render(request, 'index.html', context)
