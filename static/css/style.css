@@ -106,19 +106,17 @@ hr{
 }
 
 .masthead {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     
 }
 
 .masthead-text {
-    color: white;
+    color: rgb(22, 21, 21);
     
 }
 
 .masthead-image {
-    position: relative;
-    overflow: hidden;
+   
 }
 
 .masthead-image:after {
