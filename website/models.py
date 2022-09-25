@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-#from PIL import Image
-
+from embed_video.fields import EmbedVideoField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -62,3 +61,7 @@ class Shows(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Video(models.Model):
+    url  = EmbedVideoField()

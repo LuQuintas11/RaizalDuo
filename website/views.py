@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post, Shows
+from .models import Post, Shows, Video
 
 
 class PostList(generic.ListView):
@@ -38,5 +38,8 @@ class PostDetail(View):
         )
 
 
+def index(request):
+    videos = Video.objects.all()
+    return render (request, 'index.html', context={'videos': videos})
 
 

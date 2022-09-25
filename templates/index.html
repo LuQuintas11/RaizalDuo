@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load embed_video_tags %}
 
 {% block content %}
 <div id="body">
@@ -14,10 +15,12 @@
                 </p>
             </div>
             <hr class="hr">
-            <div class="video col-md-12 show">
-                <iframe
-                  src="https://www.facebook.com/plugins/video.php?height=295&amp;href=https%3A%2F%2Fwww.facebook.com%2Felizabeth.bujedo.3%2Fvideos%2F1018500445393361%2F&amp;show_text=false&amp;width=560&amp;t=0"  rel="preload"></iframe>
-              </div>
+            <div class="col-10 mx-auto mt-5">
+                {% for item in video_list %}
+                    {% video item.url  '426x240' %}
+                {% endfor %}
+                
+            </div>
             </div>
             <hr>
             {% for show in shows %}
