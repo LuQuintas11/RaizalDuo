@@ -3,6 +3,14 @@ from .models import Post, Comment, Shows, Video
 from django_summernote.admin import SummernoteModelAdmin
 
 
+
+@admin.register(Shows)
+class ShowsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'status', 'created_on')
+    search_fields = ['title', 'content']
+
+
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -23,10 +31,7 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
-@admin.register(Shows)
-class ShowsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
 
 
-admin.register(Video)
+
+admin.site.register(Video)

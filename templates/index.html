@@ -2,6 +2,7 @@
 {% load embed_video_tags %}
 
 {% block content %}
+
 <div id="body">
     <div class="container">
         <div class="row">
@@ -15,18 +16,19 @@
                 </p>
             </div>
             <hr class="hr">
+       
             <div class="col-10 mx-auto mt-5">
-                {% for item in video_list %}
+                {% for item in videos_list %}
                     {% video item.url  '426x240' %}
                 {% endfor %}
                 
             </div>
+           
             </div>
             <hr>
-            {% for show in shows %}
             <div class="col-md-12 show">
-            
-              <p>{{ show.title }}</p>
+            {% for show in show_list%}
+              <p>{{ show.title}}</p>
             </div>
             {% endfor %}
     </div>
