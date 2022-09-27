@@ -9,7 +9,7 @@
 }
 
 body{
-    background: linear-gradient(#808082ba, #6c596ccc), url("/media/images/raizal.jpeg")
+    background: linear-gradient(#808082ba, #6c596ccc), url("/static/media/images/raizal.jpeg")
 }
 
 .body{
@@ -251,16 +251,14 @@ i{
     margin: 5px;
 }
 
-.video {
-    width: 60%;
-    height: 25em;
-    margin: 0px auto;
 
-}
+
 
 iframe {
     width: 560px;
     height: 560px;
+    position: absolute;
+    top:100px;
    
 }
 
@@ -277,17 +275,17 @@ iframe {
     text-decoration: underline;
     position: absolute;
     left:10px;
-    top:420px
+    top:510px
 }
 
-.title-secondary{
+.text-secondary{
     color: #dbd6d6;
     text-transform: uppercase;
     font-family:"Caveat";
-    font-size: 25px;
+   
     font-weight: 900;
     text-decoration: underline;
     position: absolute;
-    left:50px;
-    top:420px
+    left:500px;
+    top:510px
 }
