@@ -9,7 +9,7 @@
 }
 
 body{
-    background: linear-gradient(#808082ba, #6c596ccc), url("/media/images/WhatsApp\ Image\ 2022-09-23\ at\ 22.13.34.jpeg")
+    background: linear-gradient(#808082ba, #6c596ccc), url("/media/images/raizal.jpeg")
 }
 
 .body{
@@ -105,33 +105,20 @@ hr{
 
 }
 
-.masthead {
-    position: relative;
+
+.masthead-music {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
     
 }
 
-.masthead-text {
-    color: rgb(22, 21, 21);
-    
+.masthead-text{
+    margin-top:300px;
+    margin-right:350px;
 }
 
-.masthead-image {
-   
-}
 
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
  
 .post-link {
     text-decoration: none;
@@ -207,16 +194,15 @@ img{
 }
 
 
-/* .row{
-    right:50px;
-    left:50px;
+ .row{
+    right:0;
+    left:0;
 
-} */
+} 
 
 
 .card1{
-    margin:5px ;
-    
+   
 }
 
 
@@ -273,10 +259,23 @@ i{
 }
 
 iframe {
-    width: 100%;
-    height: 25em;
+    width: 560px;
+    height: 560px;
+   
 }
 
 .show{
     height: 300px;
+}
+
+.title-music{
+    color: #dbd6d6;
+    text-transform: uppercase;
+    font-family:"Caveat";
+    font-size: 25px;
+    font-weight: 900;
+    text-decoration: underline;
+    position: absolute;
+    left:0px;
+    top:300px
 }

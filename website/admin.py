@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Post, Comment, Shows, Video
+from .models import Post, Comment, Show, Video
 from django_summernote.admin import SummernoteModelAdmin
 
 
 
-@admin.register(Shows)
-class ShowsAdmin(admin.ModelAdmin):
+@admin.register(Show)
+class ShowAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
 

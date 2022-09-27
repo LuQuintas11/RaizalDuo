@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post, Shows, Video
+from .models import Post, Show, Video
 
 class ShowList(generic.ListView):
-    model = Shows
-    show = Shows.objects.all()
-    #queryset = Shows.objects.filter(status=1).order_by("-created_on")
+    model = Show
+    #show = Show.objects.all()
+    queryset = Show.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
 
@@ -31,7 +31,8 @@ class PostDetail(View):
         return render(
             request,
             "post_details.html",
-            {
+            {   
+               
                 "post": post,
                 "comments": comments,
                 "liked": liked
@@ -39,9 +40,14 @@ class PostDetail(View):
         )
 
 
-def index(request):
+class VideoList(generic.ListView):
+    model= Video
     videos = Video.objects.all()
-    
-    return render (request, 'index.html', context={'videos': videos})
+    template_name= 'index.html'
+    paginate_by= 1
+  
+
+
+
 
 

@@ -4,7 +4,7 @@ from embed_video.fields import EmbedVideoField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class Shows(models.Model):
+class Show(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     excerpt = models.TextField(blank=True)
@@ -18,8 +18,8 @@ class Shows(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return  {self.title}  
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -64,6 +64,12 @@ class Comment(models.Model):
 
 
 
+
 class Video(models.Model):
+    #title = models.CharField(max_length=200, unique=True)
+    status = models.IntegerField(choices=STATUS, default=0)
     url  = EmbedVideoField()
+
+
+    
 
