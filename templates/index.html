@@ -18,19 +18,20 @@
             <hr class="hr">
        
             <div class="col-10 mx-auto mt-5">
-                {% for item in video_list %}
-                    <iframe src="{{ item.url }}"></iframe>
-                {% endfor %}
-                
+            {% for lucia in lucias %}
+               {{lucia.title}}
+
+            {% endfor %}  
             </div>
            
             </div>
             <hr>
             <div class="col-md-12 show">
-            {% for show in show_list %}
+            {% for show in object_list %}
               <p>{{ show.title }}</p>
-            </div>
+           
             {% endfor %}
+        </div>
     </div>
 
 <div class="container-fluid">
@@ -44,8 +45,12 @@
             <div class="row">
                 <hr class="hr">
                 <h2 class="music">MUSIC</h2>
+                <p class="text-music">Raizal se nutre en el ritual del encuentro, del abrazo y de los patios, de carnavales y guitarreadas, 
+                
+                reflejando esta confluencia en su música. El 1° de julio del 2022 fue el lanzamiento de su primer EP en todas las plataformas digitales, el cual está conformado por 4 temas: dos vidalas y una zamba de autoría propia, y una chaya del compositor riojano Carlos Paredes. La producción musical estuvo a cargo de Juan Murúa, grabado en Estudio Liverpool por Alfredo Guerra, mezclado y masterizado en Mate Místico por Matías Pérez 
+                 y lanzamiento a cargo de Guido Gironelli a través del sello discográfico Elefante en la Habitación. </p>
                 {% for post in post_list %}
-                    <div class=" col-md-3 card mb-4 card1">
+                    <div class=" col-md-6 card mb-4 card1">
                        
                                 {% if "placeholder" in post.featured_image.url %}
 

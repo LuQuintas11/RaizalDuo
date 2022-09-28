@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post, Show, Video
+from .models import Post, Show, Video, Lucia
 
 class ShowList(generic.ListView):
     model = Show
-    #show = Show.objects.all()
     queryset = Show.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
-    paginate_by = 6
+    paginate_by = 10
+
+
+
 
 
 class PostList(generic.ListView):
@@ -42,9 +44,9 @@ class PostDetail(View):
 
 class VideoList(generic.ListView):
     model= Video
-    videos = Video.objects.all()
+    queryset = Video.objects.all()
     template_name= 'index.html'
-    paginate_by= 1
+
   
 
 
