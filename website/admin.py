@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Show, Video, Lucia
+from .models import Post, Comment, Show, Video
 from django_summernote.admin import SummernoteModelAdmin
 from embed_video.admin import AdminVideoMixin
 
@@ -7,12 +7,12 @@ from embed_video.admin import AdminVideoMixin
 
 
 
-@admin.register(Show)
-class ShowAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
+admin.site.register(Show)
 
-admin.site.register(Lucia)
+
+admin.site.register(Video)
+
+
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
@@ -37,6 +37,4 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 
-class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):   
-    pass
-admin.site.register(Video, MyModelAdmin)
+
