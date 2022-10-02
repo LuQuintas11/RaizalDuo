@@ -28,14 +28,29 @@
            
             </div>
             <hr>
-            <div class="col-md-12 show">
-            {% for item in shows %}
-              {{ item.title }}
+        
+              {% for item in shows %}
+              <div class="show-container">
+              <div class="card show-card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{ item.title }}
+                    <p>{{ item.content }}</p>
+                  </li>
+                 
+                </ul>
+              </div>
+              {% endfor %}  
+              </div>
+                           
+               
+                         
+            
+             
+    
+                   
+                  
            
-            {% endfor %}
-        </div>
-    </div>
-
+           
 <div class="container-fluid">
 
 

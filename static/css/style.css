@@ -61,6 +61,12 @@ body{
     background-color: transparent;
 }
 
+.show-container{
+    background-color: transparent;
+    margin: 0px auto;
+
+}
+
 .image-container {
     position: relative;
 }
