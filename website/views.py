@@ -5,11 +5,11 @@ from . import models
 
 class PostList(generic.ListView):
     def get(self, request, slug=None, *args, **kwargs):
-        post = Post.objects.filter(status=1).order_by("-created_on")
+        posts = Post.objects.filter(status=1).order_by("-created_on")
         return render (request,  "index.html", 
-        {   
-            "posts":post,
-            "show":Show.objects.all(),
+            {   
+            "posts":posts,
+            "shows":Show.objects.all(),
             "videos":Video.objects.all()
             
             })
