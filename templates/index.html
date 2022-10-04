@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% load embed_video_tags %}
 
@@ -8,32 +9,33 @@
         <div class="row">
             <div class="col-md-12 text">
                 
-                <p>Raizal es un dúo de música folklórica argentina alternativa conformado por la riojana
-                     Agus Mercado en voz y caja, y el coscoíno Facu Quintas en piano. 
-                     El proyecto se generó en el marco de la cátedra de Folklore en la Facultad de Artes de la
-                      UNC en agosto del 2019. Desde ese entonces han participado en distintos encuentros, peñas, 
-                      ferias, festivales y conciertos en Córdoba Capital, Cosquín, La Falda, Río Ceballos, Villa María y La Rioja Capital. Entre ellos se destacan la Peña Oficial de la Chaya 2022, Patio de la Pirincha junto a Mery Murúa y José Luis Aguirre, Ciclo Cosquín de Lunas Musicales 2021, Ciclo de Cultura Córdoba "Cultura en el Patio". 
+                <p>Raizal is an Argentine folk music duo made up of Agus Mercado  on vocals , and Facu Quintas on piano.
+                  The project was generated within the framework of the Folklore class at the Faculty of Arts of the National University of Cordoba, Argentina in 2019. Since then they have participated in different festivals and concerts in different cities like Cordoba Capitals, Cosquin, Villa Maria and La Rioja .. 
                 </p>
             </div>
             <hr class="hr">
        
             <div class="col-10 mx-auto mt-5">
             {% for item in videos %}
-            {{ item.url }}"
+
+           <a href="{% video item.url %}">h</a>
+            <a href="{{ item.url}}">video</a>
                {{ item.title }}
                
-
+              
             {% endfor %}  
             </div>
            
             </div>
             <hr>
-        
+          <h2 class="music">Shows</h2>
               {% for item in shows %}
+              
+              
               <div class="show-container">
-              <div class="card show-card" style="width: 18rem;">
+              <div class="card show-card">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">{{ item.title }}
+                  <li class="list-group-item background-color=brown">{{ item.title }}
                     <p>{{ item.content }}</p>
                   </li>
                  
@@ -63,12 +65,10 @@
                 <hr class="hr">
                 <h2 class="music">MUSIC</h2>
                 <p class="text-music">
-                   Raizal se nutre en el ritual del encuentro, del abrazo y de los patios, de carnavales y guitarreadas, 
-                
-                  reflejando esta confluencia en su música. El 1° de julio del 2022 fue el lanzamiento de su primer EP en todas las plataformas digitales, el cual está conformado por 4 temas: dos vidalas y una zamba de autoría propia, y una chaya del compositor riojano Carlos Paredes. La producción musical estuvo a cargo de Juan Murúa, grabado en Estudio Liverpool por Alfredo Guerra, mezclado y masterizado en Mate Místico por Matías Pérez 
-                 y lanzamiento a cargo de Guido Gironelli a través del sello discográfico Elefante en la Habitación. </p>
+                  On July 1, 2022, our first EP was released on all digital platforms, which is made up of 4 songs: two Vidala, a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes. 
+                  The musical production was in charge of Juan Murúa, recorded at Estudio Liverpool by Alfredo Guerra, mixed and mastered at Mate Místico by Matías Pérez. The release by Guido Gironelli through the Elephant in the Room record label. </p>
                 {% for post in posts %}
-                    <div class=" col-md-6 card mb-4 card1">
+                    <div class=" col-md-6 card mb-4 "  style="border:none">
                        
                                 {% if "placeholder" in post.featured_image.url %}
 

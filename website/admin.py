@@ -3,14 +3,16 @@ from .models import Post, Comment, Show, Video
 from django_summernote.admin import SummernoteModelAdmin
 from embed_video.admin import AdminVideoMixin
 
+# class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
+#     pass
 
+# admin.site.register(Video, MyModelAdmin)
 
-
-
+admin.site.register(Video)
 admin.site.register(Show)
 
 
-admin.site.register(Video)
+
 
 
 

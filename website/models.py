@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from embed_video.fields import EmbedVideoField
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Post(models.Model):
@@ -32,10 +33,13 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
+                           
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
+    
     created_on = models.DateTimeField(auto_now_add=True)
+
     approved = models.BooleanField(default=False)
 
     class Meta:
@@ -46,9 +50,9 @@ class Comment(models.Model):
 
 
 class Video(models.Model):
-    title = models.CharField(max_length=200, default=0)
-    status = models.IntegerField(choices=STATUS, default=0)
-    url  = EmbedVideoField()
+    title = models.CharField(max_length=200, default=1)
+    status = models.IntegerField(choices=STATUS, default=1)
+    url = EmbedVideoField()
 
 
     def __str__(self):

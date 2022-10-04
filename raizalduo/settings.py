@@ -19,7 +19,7 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-CSRF_TRUSTED_ORIGINS=['https://*8000-luquintas11-raizalduo-id25c2xszib.ws-us69.gitpod.io/']
+CSRF_TRUSTED_ORIGINS=['https://*8080-luquintas11-raizalduo-id25c2xszib.ws-us67.gitpod.io/']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -134,8 +134,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TEMPLATE_CONTEXT_PROCESSORS = (
-'django.core.context_processors.request',
-)
+ 'django.core.context_processors.request',
+ )
+
+
+GOOGLE_OAUTH2_CLIENT_ID = '<your client id>'
+GOOGLE_OAUTH2_CLIENT_SECRET = '<your client secret>'
