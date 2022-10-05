@@ -37,7 +37,6 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
-    
     created_on = models.DateTimeField(auto_now_add=True)
 
     approved = models.BooleanField(default=False)
@@ -50,6 +49,8 @@ class Comment(models.Model):
 
 
 class Video(models.Model):
+
+                           
     title = models.CharField(max_length=200, default=1)
     status = models.IntegerField(choices=STATUS, default=1)
     url = EmbedVideoField()
@@ -61,7 +62,19 @@ class Video(models.Model):
     class Meta:
         ordering = ['-status']
 
+class VideoMusic(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name="video", default=1)
+    title = models.CharField(max_length=200, default=1)
+    status = models.IntegerField(choices=STATUS, default=1)
+    url = EmbedVideoField()
+
+
+    def __str__(self):
+        return str(self.title)
     
+    class Meta:
+        ordering = ['-status']    
 
 class Show(models.Model):
     title = models.CharField(max_length=200, unique=True)

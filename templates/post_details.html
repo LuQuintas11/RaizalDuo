@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load embed_video_tags %}
 {% block content %}
 <div class="container">
     <div class="row">
@@ -9,12 +10,15 @@
 
                         <div class="col-md-6 masthead-image">
                             <!-- The featured image URL goes in the src attribute -->
-                            {% for item in videos %}
-                           
-                            {{ item.title }}
-
-
-                            {% endfor %}
+                            <div class="col-10 mx-auto mt-5">
+                                {% for a in video %}
+                    
+                                    {% video a.url %}
+                             
+                                 
+                                  
+                                {% endfor %}  
+                                </div>
 
                        
 
@@ -46,7 +50,7 @@
                     {{ post.content | safe }}
                 </p> -->
                             <div class="row">
-
+                             
 
                                 <div class="col-1">
                                     {% with comments.count as total_comments %}

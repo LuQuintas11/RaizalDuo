@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post, Show, Video
+from .models import Post, Show, Video, VideoMusic
 from . import models
 from django import forms
 from django.views.generic.edit import FormView
@@ -27,6 +27,7 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
 
         comments = post.comments.filter(approved=True).order_by("-created_on")
+        
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -39,7 +40,7 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "liked": liked,
-                "videos":Video.objects.all()
+                "video": post.video.filter()
             },
         )
 

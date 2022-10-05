@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Show, Video
+from .models import Post, Comment, Show, Video, VideoMusic
 from django_summernote.admin import SummernoteModelAdmin
 from embed_video.admin import AdminVideoMixin
 
@@ -10,6 +10,7 @@ from embed_video.admin import AdminVideoMixin
 
 admin.site.register(Video)
 admin.site.register(Show)
+admin.site.register(VideoMusic)
 
 
 
