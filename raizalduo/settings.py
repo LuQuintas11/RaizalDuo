@@ -19,7 +19,7 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-CSRF_TRUSTED_ORIGINS=['https://*8080-luquintas11-raizalduo-id25c2xszib.ws-us67.gitpod.io/']
+CSRF_TRUSTED_ORIGINS=['https://*8080-luquintas11-raizalduo-tasc860i67i.ws-us71.gitpod.io/']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -41,11 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
     'django_summernote',
+    'crispy_forms',
     'embed_video',
     'website',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -142,3 +154,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 GOOGLE_OAUTH2_CLIENT_ID = '<your client id>'
 GOOGLE_OAUTH2_CLIENT_SECRET = '<your client secret>'
+
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'

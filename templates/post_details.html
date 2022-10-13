@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+
+
+
             <div class="masthead">
                 <div class="container ">
                     <div class="row">
@@ -34,43 +38,48 @@
                             <strong class="text-secondary text-white "><i class="far fa-heart"></i>
                                 {{ post.number_of_likes }} </strong>
                         </div>
-
+                    </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6">
+            
+    </div>
+        <!-- <div class="col-md-6">
             <div class="container">
                 <div class="row">
                     <div class="col card mb-4  mt-3 left  top">
                         <div class="card-body">
-                            <!-- The post content goes inside the card-text. -->
-                            <!-- Use the | safe filter inside the template tags -->
-                            <!-- <p class="card-text ">
-                    {{ post.content | safe }}
-                </p> -->
+                             The post content goes inside the card-text.
+                           Use the | safe filter inside the template tags 
+                            <p class="card-text ">
+                               {{ post.content | safe }
+                            </p>
                             <div class="row">
-                             
-
+            
                                 <div class="col-1">
+                                    The number of likes goes before the closing strong tag 
+                                    <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                                </div> -->
+                                <!-- <div class="col-1">
                                     {% with comments.count as total_comments %}
                                     <strong class="text-secondary"><i class="far fa-comments"></i>
-                                        <!-- Our total_comments variable goes before the closing strong tag -->
+                                        Our total_comments variable goes before the closing strong tag
                                         {{ total_comments }}</strong>
                                     {% endwith %}
-                                </div>
-                            </div>
+                                </div> -->
+                            <!-- </div>
                         </div>
                     </div>
                 </div>
+            </div> -->
+              
+            <div class="col-md-6"> 
+                
+                    <hr>
+            
                 <div class="row">
-                    <div class="col">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 card mb-4  mt-3 ">
-                        <h3 class="author">Comments:</h3>
+                   
+                    <div class="col  card mb-4  mt-3 ">
+                        <h3 class="thin">Comments:</h3>
                         <div class="card-body">
                             <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                             {% for comment in comments %}
@@ -90,14 +99,36 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="col-md-4 card mb-4  mt-3 ">
-                        <div class="card-body">
-                            <!-- For later -->
+                </div>
+            <div class="row">
+                <div class="col card mb-4  mt-3 ">
+                    <div class="card-body">
+                        <!-- For later -->
+                        {% if commented %}
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting approval
                         </div>
+                        {% else %}
+                        {% if user.is_authenticated %}
+        
+                        <h3>Leave a comment:</h3>
+                        <p>Posting as: {{ user.username }}</p>
+                        <form method="post" style="margin-top: 1.3em;">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                        </form>
+                        {% endif %}
+                        {% endif %}
+                    </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
+        
+    
+
+        </div>  
     </div>
 </div>
 {% endblock content %}

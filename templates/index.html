@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 {% load embed_video_tags %}
 
@@ -15,14 +14,11 @@
             </div>
             <hr class="hr">
        
-            <div class="col-10 mx-auto mt-5">
+            <div class="col mt-5 main-video">
             {% for item in videos %}
 
           {% video item.url  %}
-         
-               {{ item.title }}
-               
-              
+        
             {% endfor %}  
             </div>
            
@@ -32,7 +28,7 @@
               {% for item in shows %}
               
               
-              <div class="show-container">
+              <div class="show-container mb-4">
               <div class="card show-card">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item background-color=brown">{{ item.title }}
@@ -58,11 +54,11 @@
 
     <div class="row">
        
-
+      <hr class="hr">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 ">
             <div class="row">
-                <hr class="hr">
+               
                 <h2 class="music">MUSIC</h2>
                 <p class="text-music">
                   On July 1, 2022, our first EP was released on all digital platforms, which is made up of 4 songs: two Vidala, a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes. 

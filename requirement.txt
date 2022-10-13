@@ -4,7 +4,6 @@ cachetools==5.2.0
 dj-database-url==1.0.0
 Django==4.1.2
 django-allauth==0.51.0
-django-crispy-forms==1.14.0
 django-embed-video==1.4.5
 django-extensions==3.2.1
 django-summernote==0.8.20.0
