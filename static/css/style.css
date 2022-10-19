@@ -232,11 +232,6 @@ img{
    
 }
 
- iframe {
- 
-    height: 380px;
-    
-} 
 
 .video {
 
@@ -280,8 +275,7 @@ i{
 .video-secondary{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    
 }
 .show{
     height: 300px;
@@ -326,5 +320,9 @@ align-items: center;
 
 .comments{
     width: 500px;
+  
+}
+
+.center{
     margin:0px auto;
 }
