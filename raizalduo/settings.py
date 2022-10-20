@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost"]
 
 
@@ -154,6 +154,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 YOUTUBE_DATA_API_KEY = 'AIzaSyATSs9N3idzOJvK9hMG1X2-4oAZ1LF8iD4'
