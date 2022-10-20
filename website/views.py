@@ -6,8 +6,12 @@ from .forms import CommentForm
 from . import models
 from django import forms
 from django.views.generic.edit import FormView
+import requests
+from django.conf import settings
 
+import logging
 
+LOGGER = logging.getLogger(__name__)
 
 
 class PostList(generic.ListView):
@@ -37,6 +41,8 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        
+
         return render(
             request,
             "post_details.html",
@@ -52,7 +58,7 @@ class PostDetail(View):
             },
         )
 
-    def get(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
 
@@ -61,8 +67,6 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
-        comment_form = CommentForm(data=request.POST)
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -101,7 +105,25 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 def YouTube(request):
+
+    list_url= 'https://youtube.googleapis.com/youtube/v3/playlists'
+
+    params={
+        'part' : 'snippet',
+        'q': 'our friends',
+        'channelId': 'UCmAnQ_N8P76uVbrRhrT-1OQ',
+        'key':settings.YOUTUBE_DATA_API_KEY,
+        'maxResults': 3,
+        'type': 'playlists'
+
+    }
+    r= requests.get(list_url, params=params)
+    results = r.json()['items']
+
+    for result in results:
+        print(result['id'])
     return render(request, "YouTubeApi.html")
 
 

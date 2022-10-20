@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
     <div class="row center">
-        <div class="col-md-6 ">
+        <div class="col-md-6 video-margin">
         <div class="row ">
                             <!-- The featured image URL goes in the src attribute -->
                             <div class="col-md-12 mt-5 video-secondary" >
@@ -16,7 +16,7 @@
                                 {% endfor %}  
                                 </div>
                            
-                            <div class="col-md-12">
+                            <div class="col">
                                 <div class="row-fluid">
                                     <div class="col">
                                         <!-- Post title goes in these h1 tags -->
@@ -56,8 +56,8 @@
             
                 <div class="row">
                    
-                    <div class="col  card mb-4  mt-3 ">
-                        <h3 class="thin">Comments:</h3>
+                    <div class="col card mb-4  mt-3 ">
+                        <h3 class="comment-heading">Comments:</h3>
                         <div class="card-body">
                             <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                             {% for comment in comments %}
@@ -65,7 +65,7 @@
                                 <p class="font-weight-bold">
                                     <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                                     {{ comment.name }}
-                                    <span class=" text-muted font-weight-normal">
+                                    <span class="font-weight-light">
                                         <!-- The comment's created date goes here -->
                                         {{ comment.created_on }}
                                     </span> wrote:
@@ -82,21 +82,23 @@
                 <div class="col card mb-4  mt-3 ">
                     <div class="card-body">
                         <!-- For later -->
-                        {% if commented %}
+                       
+                    
+                            {% if user.is_authenticated %}
+                            {% if commented %}
                         <div class="alert alert-success" role="alert">
                             Your comment is awaiting approval
                         </div>
                         {% else %}
-                        {% if user.is_authenticated %}
-        
-                        <h3>Leave a comment:</h3>
-                        <p>Posting as: {{ user.username }}</p>
-                        <form method="post" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                        </form>
-                        {% endif %}
+            
+                            <h3 class="comment-heading">Leave a comment:</h3>
+                            <p>Posting as: {{ user.username }}</p>
+                            <form method="post" style="margin-top: 1.3em;">
+                                {{ comment_form | crispy }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                            </form>
+                            {% endif %}
                         {% endif %}
                     </div>
                     </div>

@@ -19,7 +19,7 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-CSRF_TRUSTED_ORIGINS=['https://*8080-luquintas11-raizalduo-id25c2xszib.ws-us71.gitpod.io//']
+CSRF_TRUSTED_ORIGINS=['https://*8000-luquintas11-raizalduo-id25c2xszib.ws-us71.gitpod.io//']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -152,8 +152,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
  )
 
 
-GOOGLE_OAUTH2_CLIENT_ID = '<your client id>'
-GOOGLE_OAUTH2_CLIENT_SECRET = '<your client secret>'
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+YOUTUBE_DATA_API_KEY = 'AIzaSyATSs9N3idzOJvK9hMG1X2-4oAZ1LF8iD4'

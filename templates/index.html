@@ -49,7 +49,7 @@
                   
            
            
-<div class="container-fluid">
+<div class="container">
 
 
     <div class="row">
@@ -60,11 +60,12 @@
             <div class="row">
                
                 <h2 class="music">MUSIC</h2>
-                <p class="text-music">
-                  On July 1, 2022, our first EP was released on all digital platforms, which is made up of 4 songs: two Vidala, a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes. 
-                  The musical production was in charge of Juan Murúa, recorded at Estudio Liverpool by Alfredo Guerra, mixed and mastered at Mate Místico by Matías Pérez. The release by Guido Gironelli through the Elephant in the Room record label. </p>
+                <p class="text">
+                On July 1, 2022, our first EP was released on all digital platforms, which is made up of 4 songs: two Vidala, a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes. 
+                 The musical production was in charge of Juan Murúa, recorded at Estudio Liverpool by Alfredo Guerra, mixed and mastered at Mate Místico by Matías Pérez. The release by Guido Gironelli through the Elephant in the Room record label.
+                   If you want to know more about our music and culture check <a class="text-white" href="YouTubeApi.html">our Friends</a>  </p>
                 {% for post in posts %}
-                    <div class=" col-md-6 card mb-4 "  style="border:none">
+                    <div class=" col-md-6 card mb-4 photo-post"  style="border:none">
                        
                                 {% if "placeholder" in post.featured_image.url %}
 
@@ -72,9 +73,9 @@
                         
                                 <img class="card-img-top" src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
                                 {% else %}
-                                <img src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
+                                <a href="{% url 'post_detail' post.slug  %}" class="post-link image-flash"> <img src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
                                 {% endif %}
-                                 <a href="{% url 'post_detail' post.slug  %}" class="post-link image-flash">  <p class="author"> {{ post.title }}</p></a>
+                                   <p class="author"> {{ post.title }}</p></a>
                             </div>
                             
                 {% if forloop.counter|divisibleby:4 %} 
@@ -86,7 +87,7 @@
             </div>
         </div>
    
-    <a href="YouTubeApi.html">Our Friend</a>
+    
    
 
 </div>

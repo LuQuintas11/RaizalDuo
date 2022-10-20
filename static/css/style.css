@@ -31,6 +31,14 @@ body{
 
 }
 
+.comment-heading {
+    font-weight: 900;
+    font-family:"Caveat";
+    color: rgb(176, 67, 67);
+    font-size: 40px;
+    margin: 0px 0px 0px 25px;
+
+}
 
 
 .container-fluid1{
@@ -88,18 +96,6 @@ border: 1px solid rgba(0,0,0,.125);
     margin-bottom: 10px;
 } 
 
-/* .text-music{
-    color: #dbd6d6;
-    font-weight: 500;
-    font-size: 25px;
-    font-family:"Caveat";
-    margin: 0px auto;
-    text-align: center;
-    margin-bottom: 10px;
-
-   
-
-} */
 
 .text{
     
@@ -213,11 +209,6 @@ img{
 }
 
 
- /* .row{
-    right:0;
-    left:0;
-
-}  */
 
 
 
@@ -275,7 +266,15 @@ i{
 .video-secondary{
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    justify-self: center;
+}
+.video-secondary>iframe{
+    width:100%;
+}
+
+.video-margin{
+    margin:0px auto;
 }
 .show{
     height: 300px;
@@ -319,10 +318,38 @@ align-items: center;
 }
 
 .comments{
-    width: 500px;
+    width: auto;
+    margin: 0px auto;
   
 }
 
 .center{
     margin:0px auto;
+}
+
+.card-body{
+    flex:1 1 auto;
+}
+
+iframe{
+    width: 60%;
+}
+
+
+
+@media (max-width: 770px) {
+    iframe{
+        width: 480px;
+    }
+    
+  }
+
+@media (max-width: 400px){
+    img{
+        width: 250px;
+    }
+
+    .title-music{
+        font-size: 20px;
+    }
 }
