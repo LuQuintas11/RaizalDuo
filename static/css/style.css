@@ -18,6 +18,14 @@ body{
     color: #4A4A4F;
 }
 
+.navbar-light .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff')
+}
+
+.navbar-light .navbar-toggler {
+    color: white;
+    border-color: rgba(0,0,0,.1);
+}
 .red-o {
     color: #E84610;
 }
@@ -263,12 +271,12 @@ i{
     justify-content: center;
     align-items: center;
 }
-.video-secondary{
+/* .video-secondary{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-self: center;
-}
+} */
 .video-secondary>iframe{
     width:100%;
 }
@@ -332,17 +340,30 @@ align-items: center;
 }
 
 iframe{
-    width: 60%;
+    width: 600px;
 }
 
 
 
-@media (max-width: 770px) {
+@media (max-width: 970px) {
     iframe{
         width: 480px;
     }
     
   }
+
+@media (max-width: 550px){
+    .video-secondary{
+        display: flex;
+    }
+}
+
+@media(max-width: 300px){
+    .video-secondary>iframe{
+        width: 250px;
+        height: 300px;
+    }
+}
 
 @media (max-width: 400px){
     img{
@@ -352,4 +373,10 @@ iframe{
     .title-music{
         font-size: 20px;
     }
+
+    iframe{
+
+    }
 }
+
+
