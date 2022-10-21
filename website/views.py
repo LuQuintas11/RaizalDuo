@@ -106,25 +106,25 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def YouTube(request):
+# def YouTube(request):
 
-    list_url= 'https://youtube.googleapis.com/youtube/v3/playlists'
+#     list_url= 'https://youtube.googleapis.com/youtube/v3/playlists'
 
-    params={
-        'part' : 'snippet',
-        'q': 'our friends',
-        'channelId': 'UCmAnQ_N8P76uVbrRhrT-1OQ',
-        'key':settings.YOUTUBE_DATA_API_KEY,
-        'maxResults': 3,
-        'type': 'playlists'
+#     params={
+#         'part' : 'snippet',
+#         'q': 'our friends',
+#         'channelId': 'UCmAnQ_N8P76uVbrRhrT-1OQ',
+#         'key':settings.YOUTUBE_DATA_API_KEY,
+#         'maxResults': 3,
+#         'type': 'playlists'
 
-    }
-    r= requests.get(list_url, params=params)
-    results = r.json()['items']
+#     }
+#     r= requests.get(list_url, params=params)
+#     results = r.json()['items']
 
-    for result in results:
-        print(result['id'])
-    return render(request, "YouTubeApi.html")
+#     for result in results:
+#         print(result['id'])
+#     return render(request, "YouTubeApi.html")
 
 
 

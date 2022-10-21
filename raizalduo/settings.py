@@ -18,8 +18,10 @@ if os.path.isfile('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-CSRF_TRUSTED_ORIGINS=['https://*8000-luquintas11-raizalduo-id25c2xszib.ws-us71.gitpod.io//']
+
+CSRF_TRUSTED_ORIGINS = ['https://*8000-luquintas11-raizalduo-id25c2xszib.ws-us71.gitpod.io//']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -29,8 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost"]
+
+
+ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost", "https://raizalduo.herokuapp.com/"]
 
 
 # Application definition
@@ -155,4 +160,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 
 
-YOUTUBE_DATA_API_KEY = 'AIzaSyATSs9N3idzOJvK9hMG1X2-4oAZ1LF8iD4'
+#YOUTUBE_DATA_API_KEY = 'AIzaSyATSs9N3idzOJvK9hMG1X2-4oAZ1LF8iD4'
