@@ -22,9 +22,9 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls'), name='website-urls'),
-    
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
+   
     
    
  ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

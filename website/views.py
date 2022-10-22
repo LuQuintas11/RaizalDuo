@@ -6,12 +6,8 @@ from .forms import CommentForm
 from . import models
 from django import forms
 from django.views.generic.edit import FormView
-import requests
-from django.conf import settings
 
-import logging
 
-LOGGER = logging.getLogger(__name__)
 
 
 class PostList(generic.ListView):
@@ -30,7 +26,7 @@ class PostList(generic.ListView):
                 
 
 class PostDetail(View):
-
+    
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)

@@ -7,9 +7,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text">
-                
                 <p>Raizal is an Argentine folk music duo made up of Agus Mercado  on vocals , and Facu Quintas on piano.
-                  The project was generated within the framework of the Folklore class at the Faculty of Arts of the National University of Cordoba, Argentina in 2019. Since then they have participated in different festivals and concerts in different cities like Cordoba Capitals, Cosquin, Villa Maria and La Rioja .. 
+                  The project was generated within the framework of the Folklore class at the Faculty of Arts of the National University of Cordoba, Argentina in 2019. Since then they have participated in different festivals and concerts in different cities like Cordoba Capitals, Cosquin, Villa Maria and La Rioja. 
                 </p>
             </div>
             <hr class="hr">
@@ -72,9 +71,9 @@
                         
                                 <img class="card-img-top" src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
                                 {% else %}
-                                <a href="{% url 'post_detail' post.slug  %}" class="post-link image-flash"> <img src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
+                                <a href="{% url 'post_detail' post.slug  %}" class="song-link image-flash"> <img src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
                                 {% endif %}
-                                   <p class="author"> {{ post.title }}</p></a>
+                                   <p class="song-title"> {{ post.title }}</p></a>
                             </div>
                             
                 {% if forloop.counter|divisibleby:4 %} 

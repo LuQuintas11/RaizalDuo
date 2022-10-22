@@ -1,22 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Dosis:wght@200&display=swap');
+
 
 *{
     background-color: linear-gradient(to bottom, #b20808 0%, #e9674d 100%)
 }
 
 body{
-    background: linear-gradient(#808082ba, #6c596ccc), url("/static/media/images/raizal.jpeg")
+    background: linear-gradient(rgba(98, 97, 97, 0.729), #473c47cc), url("/static/media/images/raizal.jpeg")
 }
 
 .body{
     background-color: linear-gradient(to bottom, #b20808 0%, #e9674d 100%)
 }
-/* .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-} */
+
+/* nav-bar style */
+
+
+.container-fluid1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:0px auto;
+}
+
 
 .navbar-light .navbar-toggler-icon {
     background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff')
@@ -26,9 +31,7 @@ body{
     color: white;
     border-color: rgba(0,0,0,.1);
 }
-.red-o {
-    color: #E84610;
-}
+
 
 .nav-heading {
     font-weight: 900;
@@ -39,26 +42,54 @@ body{
 
 }
 
-.comment-heading {
-    font-weight: 900;
-    font-family:"Caveat";
-    color: rgb(176, 67, 67);
-    font-size: 40px;
-    margin: 0px 0px 0px 25px;
+/* footer */
 
+footer{
+    position: fixed;
+     bottom: 0;
+     width: 100%;
+ }
+ 
+
+/* index.html stylying */
+
+.text{
+    
+    text-align: center;
+    margin:0px auto;
+   
 }
 
+p{
+    color: #f7f3f3;
+    font-weight: 500;
+    font-size: 27px;
+    font-family:"Caveat";
+    margin: 0px auto;
+    margin-bottom: 10px;
+} 
 
-.container-fluid1{
+
+
+.main-video{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin:0px auto;
 }
 
-.light-bg {
-    background-color: #fff;
+
+
+.heading{
+    color:#f4eded  ;
+    text-transform: uppercase;
+    font-family:"Caveat";
+    font-weight: 900;
+    font-size: 40px;
+    text-align: center;
+   
 }
+
 
 
 .card {
@@ -71,8 +102,18 @@ body{
     width: auto;
 
 }
-.list-group-item{
 
+.show{
+    height: 300px;
+}
+
+.show-container{
+    
+    margin: 0px auto;
+}
+
+
+.list-group-item{
 
 position: relative;
 display: block;
@@ -84,31 +125,11 @@ border: 1px solid rgba(0,0,0,.125);
 }
 
 
-.image-container {
-    position: relative;
-}
+
 
 .image-flash{
     text-align: center;
     
-}
-
- p{
-    color: #dbd6d6;
-    font-weight: 500;
-    font-size: 25px;
-    font-family:"Caveat";
-    margin: 0px auto;
-  
-    margin-bottom: 10px;
-} 
-
-
-.text{
-    
-    text-align: center;
-    margin:0px auto;
-   
 }
 
 hr{
@@ -116,55 +137,44 @@ hr{
     width: 100%;
     margin-top: 150px;
 }
-.image-flash:hover{
+
+ .image-flash:hover{
     transform: scale(1.1);
+} 
+
+img{
+    border-radius: 2%;
+    border: 1px solid white;
+    width: 350px;
+    max-height: 450px;
+    margin: 0px auto;
+    
+
 }
 
-.author {
-    color: #dbd6d6;
+
+.song-title{
+    color: #f5f2f2;
     text-transform: uppercase;
     font-family:"Caveat";
     font-size: 25px;
     font-weight: 900;
-    text-decoration: underline;
-
-
-
 }
 
-
-
-
-.masthead-text{
-    margin-top:300px;
-    margin-right:350px;
-}
 
 
  
-.post-link {
+.song-link {
     text-decoration: none;
     color: #445261;
     border-radius: 50%;
 } 
 
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
 
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
 
 .btn-signup {
     background-color: rgb(176, 67, 67);
+    font-family:"Caveat";
     color: #fff;
 }
 
@@ -200,83 +210,15 @@ hr{
 
 
 
-
-img:hover{
-    transform: scale(1.1);
-}
-
-img{
-    border-radius: 2%;
-    border: 1px solid white;
-    width: 350px;
-    max-height: 450px;
-    margin: 0px auto;
-    
-
-}
-
-
-
-
-
-
-.heading{
-    color:#dbd6d6  ;
-    text-transform: uppercase;
-    font-family:"Caveat";
-    font-weight: 800;
-    font-size: 40px;
-    text-align: center;
-   
-}
-
-
-.video {
-
-    margin: 0px auto;
-
-}
-
-.row-video{
- max-height: 500px;
-}
-
-h3{
-    color: #b20808;
-    font-size: 50px;
-
-}
-
-
-li>a{
-    color:white;
-}
-
-.nav-link{
-    font-family: "Caveat";
-    font-size: 25px;
-}
-
-i{
-    margin: 5px;
-}
-
-
-
-
-.main-video{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
+/* post_details.html styling */
 
 .video-margin{
     margin:0px auto;
 }
-.show{
-    height: 300px;
+
+
+.center{
+    margin:0px auto;
 }
 
 .title-music{
@@ -298,34 +240,44 @@ i{
 }
 
 
-footer{
-   position: fixed;
-    bottom: 0;
-    width: 100%;
+li>a{
+    color:white;
 }
 
-
-.show-container{
-    
-    margin: 0px auto;
+.nav-link{
+    font-family: "Caveat";
+    font-size: 25px;
+    font-weight: 800;
 }
 
-.post{
-display:flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+i{
+    margin: 5px;
+}
+
+/* comments */
+h3, h5{
+    color: #b20808;
+    font-size: 50px;
+    font-family: "Caveat";
+
 }
 
 .comments{
-    width: auto;
+   
     margin: 0px auto;
   
 }
 
-.center{
-    margin:0px auto;
+.comment-heading {
+    font-weight: 900;
+    font-family:"Caveat";
+    color: rgb(252, 251, 251);
+    font-size: 40px;
+    margin: 0px 0px 0px 25px;
+
 }
+
+
 
 .card-body{
     flex:1 1 auto;
@@ -335,6 +287,16 @@ iframe{
     width: 600px;
 }
 
+@media(max-width:1280){
+    .row-center{
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+    }
+}
 
 
 @media (max-width: 970px) {
@@ -371,9 +333,15 @@ iframe{
         font-size: 20px;
     }
 
-    iframe{
 
-    }
 }
+
+
+
+
+
+
+
+
 
 
