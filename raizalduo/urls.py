@@ -22,7 +22,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls'), name='website-urls'),
-    path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
    
     

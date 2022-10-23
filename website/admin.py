@@ -1,30 +1,22 @@
 from django.contrib import admin
 from .models import Post, Comment, Show, Video, VideoMusic
-from django_summernote.admin import SummernoteModelAdmin
-from embed_video.admin import AdminVideoMixin
 
-# class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
-#     pass
-
-# admin.site.register(Video, MyModelAdmin)
 
 admin.site.register(Video)
+
 admin.site.register(Show)
+
 admin.site.register(VideoMusic)
 
 
-
-
-
-
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content',)
+ 
 
 
 @admin.register(Comment)
