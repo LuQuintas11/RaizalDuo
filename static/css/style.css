@@ -92,6 +92,7 @@ iframe {
 .show-card {
     background-color: brown;
     width: auto;
+    margin:0px auto;
 
 }
 
@@ -167,6 +168,7 @@ img {
 .btn-signup {
     background-color: rgb(176, 67, 67);
     font-family: "Caveat";
+    font-size: 25px;
     color: #fff;
 }
 

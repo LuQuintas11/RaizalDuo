@@ -1,108 +1,150 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Porpuse
 
-Welcome LuQuintas11,
+This website was created to complete the fourth Milestone Project for Code Insitute's Full Stack Software Developer course.
+This website is about a real music band, Raizal Duo. It was made based on specific requirements by the members of the band.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Users of this website are able to listen the new EP released by the band, like and comment and check the nexts shows and presentations. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+You can find the link to the live website right
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experience
 
-`python3 -m http.server`
+**As a Site User** I can view a list of posts so that **I can select one to listen to**.
 
-A blue button should appear to click: _Make Public_,
+**As a Site User** I can click on a song so that **I can listen to it**.
 
-Another blue button should appear to click: _Open Browser_.
+**As a Site User** I can register an account so that **I can comment and like**.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+**As a Site User** I can leave comments on a song so that **I can be involved in the conversation**.
 
-A blue button should appear to click: _Make Public_,
+**As a Site User** I can like or unlike a song so that **I can interact with the content**.
 
-Another blue button should appear to click: _Open Browser_.
+**As a Site User / Admin** I can view comments on an individual song so that **I can read the conversation**.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**As a Site Admin** I can create, read, update and delete comments.
 
-To log into the Heroku toolbelt CLI:
+**As a Site User / Admin** I can view the number of likes on each song so that **I can see which is the most popular or viral**.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**As a Site User** I can register an account so that **I can comment and like**.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**As a Site Admin** I can approve or disapprove comments so that **I can filter out objectionable comments**.
 
-------
 
-## Release History
+## Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+This website two pages:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+1. Home page: main video section, music section
+2. Second page: music section video, comment section 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The navigation and footer features are present in the three pages:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+**Navigation**
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Feature at the top of the page, the navigation shows the name of the music band in the center: Raizal. To the left of the name shows  **home** and **sign up/log in** links. To the right of the name shows social media links 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![This is an image](/media/website/Nav.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+**sign up/log in** section:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![This is an image](/media/website/Sign-up.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+**Footer**
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The footer includes social media icons to the users can find the band on spotify, instagram and youtube channel.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![This is an image](/media/website/Social%20media.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+1. **Home Page**
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The home page has a main section with a small text explain the origins of the band. Bellow to this small text there is a video showing the band playing, offering an eye catching content to grab users attention.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+![This is an image](/media/website/Main-Video.png)
 
-## FAQ about the uptime script
+Below the main section there is a show section. In this section, users can check the upcoming shows and presentations. 
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![This is an image](/media/website/Shows.png)
 
-**How will this affect me?**
+The last section it shows the last EP of the band. There is a post for each song of the album. There is a small text explaining how was recorded
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![This is an image](/media/website/Music.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+2. **Second Page**
 
-**So….?**
+When the user clicks on any post on the main page it takes him to the music video of said post. Beside the video there is the comment section; The user can leave a comment and see other user's comments. Below the video the user can like and see other user's likes. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![This is an image](/media/website/Secondary%20Video.png)
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Testing
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+During the development process, I was manually testing in the following ways:
 
-**Anything more?**
+I then used the devtools to simulate different screen sizes/devices
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The comment form field works: requires entry in body field, only allows comment if the user is authenticated, and the submit button works.
 
----
+The sign up/sign in form field works: requires entry in every field, only accept and email in the email field, and the submit button works.
 
-Happy coding!
+## Bugs and Fixes
+
+1. Intended Outcome - A fully responsive main and secondary video suited to all screen sizes.
+
+   Issue Found:
+    The video size was fixed, no responsive
+    The videos were too small at the largest sizes.
+   Solution Used:
+    Used CSS flex
+2. Intended Outcome - Align the comment section below video
+
+   Issue Found:
+    The comment section was overlapping the video
+   Soluction Used:
+    Used CSS flex
+
+3. Intended Outcome - A footer at the bottom of the page 
+
+  Issue Found:
+    The footer was at the middle of the page 
+  Soluction Used:
+    Used position:fixed
+
+
+## Post Development Testing
+
+Validators
+
+HTML-[HTML validator ](https://validator.w3.org/)
+
+Issue Found:
+![This is an image](/media/website/Screenshot%20(17).png)
+
+All the issues were fixed except for the iframe issue; I do no have access to this element. This element come from the youtube video url uploaded.
+
+CSS-[CSS validator ](https://jigsaw.w3.org/css-validator/validator)
+
+All pages tested, no issues found via URL or file upload.
+
+![This is an image](/media/website/Screenshot%20(20).png)
+
+## Lighthouse Scores
+
+# Test Conditions
+I did all lighthouse tests in incognito mode to avoid interference from browser extensions.
+
+I ran the tests for both mobile and desktop.
+
+Desktop Version:
+
+![This is an image](/media/website/Permofance.png)
+
+There were several actions required to get to this score:
+
+Mobile Version:
+
+![This is an image](/media/website/Mobile%20.png)

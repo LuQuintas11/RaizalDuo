@@ -24,23 +24,35 @@
       </div>
 
     </div>
+  </div>
     <hr>
+
     <h2 class="heading">Shows</h2>
-    {% for item in shows %}
+   
     <div class="show-container mb-4">
-      <div class="card show-card">
+     
+      <div class="row">
+      <div class="col-md-10 card show-card">
+        {% for item in shows %}
         <ul class="list-group list-group-flush">
           <li class="list-group-item background-color=brown">{{ item.title }}
             <p>{{ item.content }}</p>
           </li>
         </ul>
-
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
 
+    
+    </div>
+  
   </div>
-</div>
+
+   
+      
+    
+     
+
+
 
 
 
@@ -65,9 +77,7 @@
           a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes.
           The musical production was in charge of Juan Murúa, recorded at Estudio Liverpool by Alfredo Guerra, mixed and
           mastered at Mate Místico by Matías Pérez. The release by Guido Gironelli through the Elephant in the Room
-          record label.
-          If you want to know more about our music and culture check <a class="text-white" href="YouTubeApi.html">our
-            Friends</a> </p>
+          record label. </p>
         {% for post in posts %}
         <div class=" col-md-6 card mb-4 photo-post" style="border:none">
 
@@ -96,4 +106,6 @@
 
 
   </div>
+</div>
+</div>
   {%endblock%}
