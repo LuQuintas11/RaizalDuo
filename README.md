@@ -4,7 +4,7 @@ This website was created to complete the fourth Milestone Project for Code Insit
 
 Users of this website are able to listen the new EP released by the band, like and comment and check the nexts shows and presentations. 
 
-You can find the link to the live website right  [here ](https://raizalduo.herokuapp.com/vidalas-de-las-penas/)
+You can find the link to the live website right  [here ](https://raizalduo.herokuapp.com/)
 
 ![This is an image](/media/website/responsive.png)
 
