@@ -1,7 +1,7 @@
 ---
 name: Manage Shows
 about: Describe this issue template's purpose here.
-title: ''
+title: 'USER STORY: [TITLE]'
 labels: ''
 assignees: ''
 
