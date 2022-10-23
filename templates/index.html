@@ -4,89 +4,96 @@
 {% block content %}
 
 <div id="body">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text">
-                <p>Raizal is an Argentine folk music duo made up of Agus Mercado  on vocals , and Facu Quintas on piano.
-                  The project was generated within the framework of the Folklore class at the Faculty of Arts of the National University of Cordoba, Argentina in 2019. Since then they have participated in different festivals and concerts in different cities like Cordoba Capitals, Cosquin, Villa Maria and La Rioja. 
-                </p>
-            </div>
-            <hr class="hr">
-       
-            <div class="col mt-5 main-video">
-            {% for item in videos %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text">
+        <p>Raizal is an Argentine folk music duo made up of Agus Mercado on vocals , and Facu Quintas on piano.
+          The project was generated within the framework of the Folklore class at the Faculty of Arts of the National
+          University of Cordoba, Argentina in 2019. Since then they have participated in different festivals and
+          concerts in different cities like Cordoba Capitals, Cosquin, Villa Maria and La Rioja.
+        </p>
+      </div>
+      <hr class="hr">
 
-          {% video item.url  %}
-        
-            {% endfor %}  
-            </div>
-           
-            </div>
-            <hr>
-          <h2 class="heading">Shows</h2>
-              {% for item in shows %}
-              <div class="show-container mb-4">
-              <div class="card show-card">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item background-color=brown">{{ item.title }}
-                    <p>{{ item.content }}</p>
-                  </li>
-                </ul>
-          
-              </div>
-              {% endfor %}
-            </div> 
-              
-          </div>
-        </div>     
-                         
-            
-             
-    
-                   
-                  
-           
-           
+      <div class="col mt-5 main-video">
+        {% for item in videos %}
+
+        {% video item.url  %}
+
+        {% endfor %}
+      </div>
+
+    </div>
+    <hr>
+    <h2 class="heading">Shows</h2>
+    {% for item in shows %}
+    <div class="show-container mb-4">
+      <div class="card show-card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item background-color=brown">{{ item.title }}
+            <p>{{ item.content }}</p>
+          </li>
+        </ul>
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
 <div class="container">
 
 
-    <div class="row">
-       
-      <hr class="hr">
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 ">
-            <div class="row">
-               
-                <h2 class="heading">MUSIC</h2>
-                <p class="text">
-                On July 1, 2022, our first EP was released on all digital platforms, which is made up of 4 songs: two Vidala, a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes. 
-                 The musical production was in charge of Juan Murúa, recorded at Estudio Liverpool by Alfredo Guerra, mixed and mastered at Mate Místico by Matías Pérez. The release by Guido Gironelli through the Elephant in the Room record label.
-                   If you want to know more about our music and culture check <a class="text-white" href="YouTubeApi.html">our Friends</a>  </p>
-                {% for post in posts %}
-                    <div class=" col-md-6 card mb-4 photo-post"  style="border:none">
-                       
-                                {% if "placeholder" in post.featured_image.url %}
+  <div class="row">
 
-                              <h3>Succesfully uploaded : {{img_obj.title}}</h3>
-                        
-                                <img class="card-img-top" src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
-                                {% else %}
-                                <a href="{% url 'post_detail' post.slug  %}" class="song-link image-flash"> <img src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
-                                {% endif %}
-                                   <p class="song-title"> {{ post.title }}</p></a>
-                            </div>
-                            
-                {% if forloop.counter|divisibleby:4 %} 
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+    <hr class="hr">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 ">
+      <div class="row">
 
-            </div>
+        <h2 class="heading">MUSIC</h2>
+        <p class="text">
+          On July 1, 2022, our first EP was released on all digital platforms, which is made up of 4 songs: two Vidala,
+          a Zamba of our own authorship, and a Chaya by the Riojan composer Carlos Paredes.
+          The musical production was in charge of Juan Murúa, recorded at Estudio Liverpool by Alfredo Guerra, mixed and
+          mastered at Mate Místico by Matías Pérez. The release by Guido Gironelli through the Elephant in the Room
+          record label.
+          If you want to know more about our music and culture check <a class="text-white" href="YouTubeApi.html">our
+            Friends</a> </p>
+        {% for post in posts %}
+        <div class=" col-md-6 card mb-4 photo-post" style="border:none">
+
+          {% if "placeholder" in post.featured_image.url %}
+
+          <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+
+          <img class="card-img-top" src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
+          {% else %}
+          <a href="{% url 'post_detail' post.slug  %}" class="song-link image-flash"> <img
+              src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
+            {% endif %}
+            <p class="song-title"> {{ post.title }}</p></a>
         </div>
-   
-    
-   
 
-</div>
-{%endblock%}
+        {% if forloop.counter|divisibleby:4 %}
+      </div>
+      <div class="row">
+        {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+  {%endblock%}

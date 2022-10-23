@@ -5,6 +5,7 @@ from embed_video.fields import EmbedVideoField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -44,17 +45,16 @@ class Comment(models.Model):
 
 class Video(models.Model):
 
-                           
     title = models.CharField(max_length=200, default=1)
     status = models.IntegerField(choices=STATUS, default=1)
     url = EmbedVideoField()
-
 
     def __str__(self):
         return str(self.title)
     
     class Meta:
         ordering = ['-status']
+
 
 class VideoMusic(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
@@ -63,12 +63,12 @@ class VideoMusic(models.Model):
     status = models.IntegerField(choices=STATUS, default=1)
     url = EmbedVideoField()
 
-
     def __str__(self):
         return str(self.title)
     
     class Meta:
         ordering = ['-status']    
+
 
 class Show(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -79,6 +79,5 @@ class Show(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
    
-
     def __str__(self):
-        return  self.title 
+        return self.title 
