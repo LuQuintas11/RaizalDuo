@@ -4,7 +4,9 @@ This website was created to complete the fourth Milestone Project for Code Insit
 
 Users of this website are able to listen the new EP released by the band, like and comment and check the nexts shows and presentations. 
 
-You can find the link to the live website right
+You can find the link to the live website right  [here ](https://raizalduo.herokuapp.com/vidalas-de-las-penas/)
+
+![This is an image](/media/website/responsive.png)
 
 
 ## Technologies used
@@ -159,7 +161,7 @@ During the development process, I was manually testing in the following ways:
 HTML-[HTML validator ](https://validator.w3.org/)
 
 *Issue Found*:
-![This is an image](/media/website/Screenshot%20(17).png)
+![This is an image](/media/website/htmlvalidator.png)
 
 All the issues were fixed except for the iframe issue; I do no have access to this element. This element come from the youtube video url uploaded.
 
@@ -167,7 +169,7 @@ CSS-[CSS validator ](https://jigsaw.w3.org/css-validator/validator)
 
 All pages tested, no issues found via URL or file upload.
 
-![This is an image](/media/website/Screenshot%20(20).png)
+![This is an image](/media/website/cssvalidator.png)
 
 ## Lighthouse Scores
 
@@ -178,7 +180,7 @@ I ran the tests for both mobile and desktop.
 
 **Desktop Version**:
 
-![This is an image](/media/website/Screenshot%20(22).png)
+![This is an image](/media/website/desktopper.png)
 
 
 There were several actions required to get to this score:
@@ -203,7 +205,7 @@ The Accecibility score is 94. It suggest to improve it:
 
 **Mobile Version**:
 
-![This is an image](/media/website/Mobile%20.png)
+![This is an image](/media/website/performance.png)
 
 The same issues mentioned before ( desktop score ) were found and the same actions were taken 
 
