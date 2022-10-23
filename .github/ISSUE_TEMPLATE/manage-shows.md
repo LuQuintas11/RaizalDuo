@@ -7,4 +7,4 @@ assignees: ''
 
 ---
 
-As *site manager
+As a **Site Admin** I can **create, read, update and delete shows**
