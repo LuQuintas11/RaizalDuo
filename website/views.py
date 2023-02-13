@@ -91,6 +91,7 @@ def updateComment(request, comment_id):
 def deleteComment(request,comment_id):
     comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
     comment.delete()
+    messages.success(request, "Your comment has been deleted")
     return redirect(reverse('PostDetail', args=[comment.post.id]))
 
 
