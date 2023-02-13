@@ -31,9 +31,9 @@ CSRF_TRUSTED_ORIGINS = ['https://*8000-luquintas11-raizalduo-id25c2xszib.ws-us86
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-development = os.environ.get('DEVELOPMENT', False)
+#development = os.environ.get('DEVELOPMENT', False)
 
-DEBUG =  development
+DEBUG =  False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'embed_video',
     'cloudinary',
     'website',
+    'django_summernote',
 ]
 
 SITE_ID = 1
@@ -137,7 +138,6 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
