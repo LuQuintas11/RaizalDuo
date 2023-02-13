@@ -139,7 +139,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/images/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
