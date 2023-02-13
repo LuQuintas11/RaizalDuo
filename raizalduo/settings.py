@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 #development = os.environ.get('DEVELOPMENT', False)
 
-DEBUG =  False
+DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -139,7 +139,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_URL = '/static/images/'
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
