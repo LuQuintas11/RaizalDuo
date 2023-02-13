@@ -56,10 +56,10 @@
         {% block review %}
         <div class="row">
             <div class="col card mb-4  mt-3 ">
-                <h3 class="review-heading">Reviews:</h3>
+                <h3 class="comment-heading">Comments:</h3>
                 <div class="card-body">
                     {% if user.is_authenticated %}
-                    <a href="{% url 'createComment' post.id %}" class="btn btn-primary">
+                    <a href="{% url 'createComment' post.id %}" class="button btn btn-primary">
                         Add Review
                     </a>
                     {% endif %}
@@ -78,12 +78,11 @@
         
         
                     {% if user.is_authenticated and user == comment.user %}
-                    <a class="btn btn-primary me-2" href="{% url 'updateComment' comment.id %}">
+                    <a class="button btn btn-primary me-2" href="{% url 'updateComment' comment.id %}">
                         Update
                     </a>
-                    <a class="btn btn-danger"
-                    href="{% url 'deleteComment' comment.id 
-                      %}">
+                    <a class="button btn btn-danger"
+                    href="{% url 'deleteComment' comment.id %}">
                     Delete
                   </a>
         

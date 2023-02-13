@@ -84,11 +84,10 @@ def updateComment(request, comment_id):
                 {"comment": comment, "form": form, "error": "Bad data in form"},
             )
 
-            
+
 @login_required
-def deleteComment(request,id):
-    comment = get_object_or_404(Comment(), pk=comment_id,
-      user=request.user)
+def deleteComment(request,comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
     comment.delete()
     return redirect(reverse('PostDetail', args=[comment.post.id]))
 

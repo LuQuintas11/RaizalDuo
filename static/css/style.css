@@ -270,12 +270,18 @@ h5 {
 .comment-heading {
     font-weight: 900;
     font-family: "Caveat";
-    color: rgb(252, 251, 251);
+    color: rgb(238, 228, 228);
     font-size: 40px;
     margin: 0px 0px 0px 25px;
 
 }
 
+
+.button{
+    font-family: "Caveat";
+    background-color: transparent;
+    font-size: 22px;
+}
 
 
 
