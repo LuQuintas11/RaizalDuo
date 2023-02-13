@@ -1,100 +1,96 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post, Show, Video, VideoMusic
+from .models import Post, Show, Video, VideoMusic, Comment
 from .forms import CommentForm
 from . import models
 from django import forms
 from django.views.generic.edit import FormView
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
     def get(self, request, slug=None, *args, **kwargs):
         posts = Post.objects.filter(status=1).order_by("-created_on")
         videos = Video.objects.all()
-        return render (request,  "index.html", 
-            {   
-            "posts":posts,
-            "shows":Show.objects.all(),
-            "videos":videos,
+        return render(request,  "index.html", {   
+            "posts": posts,
+            "shows": Show.objects.all(),
+            "videos": videos,
             
             
             })
 
-                
-class PostDetail(View):
-    
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
 
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
 
+def PostDetail(request, post_id):
+    queryset = Post.objects.filter(status=1)
+    post = get_object_or_404(Post, id=post_id)
+    comments = post.comments.filter(approved=True).order_by("-created_on")
+   
+    liked =  request.user in post.likes.all()
+
+
+    context={ 
+        "post": post,
+        "comments": comments,
+        "liked": liked, 
+        "video": post.video.filter(), }
+
+    return render(request, "post_details.html", context)
+
+
+@login_required
+def createComment(request, post_id):
+    post = get_object_or_404(Post,pk=post_id) 
+    if request.method == 'GET':
+        return render(request, 'createComment.html', 
+                      {'form':CommentForm(), 'post':
+                        post})
+    else:
+        try:
+            form = CommentForm(request.POST)
+            newComment = form.save(commit=False)
+            newComment.user = request.user
+            newComment.post = post
+            newComment.save()
+            return redirect(reverse('PostDetail', args=[newComment.post.id]))
+
+        except ValueError:
+            return render(request, 
+              'createComment.html', 
+              {'form':CommentForm(),'error':'bad data passed in'})    
+
+
+@login_required
+def updateComment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
+    if request.method == "GET":
+        form = CommentForm(instance=comment)
         return render(
-            request,
-            "post_details.html",
-            {   
-               
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "video": post.video.filter(),
-                "comment_form": CommentForm()
-
-            },
+            request, 'updateComment.html', {"comment": comment, "form": form}  # noqa
         )
-
-    def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
-
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-        else:
-            comment_form = CommentForm()
-
-        return render(
-            request,
-            "post_details.html",
-            {   
-               
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-                "liked": liked,
-                "video": post.video.filter(),
-                
-
-            },
-        )
+    else:
+        try:
+            form = CommentForm(request.POST, instance=comment)
+            form.save()
+            messages.success(request, "Successfully updated review!")
+            return redirect(reverse('PostDetail', args=[comment.post.id]))
+        except ValueError:
+            return render(
+                request,
+                'updateComment.html',
+                {"comment": comment, "form": form, "error": "Bad data in form"},
+            )
 
 
-class PostLike(View):
-    
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
+def PostLike(request, id):
+    post = get_object_or_404(Post, id=id)
+    if request.user in post.likes.all():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    post.save()
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+   

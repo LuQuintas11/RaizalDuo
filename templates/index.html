@@ -87,7 +87,7 @@
 
           <img class="card-img-top" src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
           {% else %}
-          <a href="{% url 'post_detail' post.slug  %}" class="song-link image-flash"> <img
+          <a href="{% url 'PostDetail' post.id  %}" class="song-link image-flash"> <img
               src="{{ post.featured_image.url}}" alt="connect" style="max-height:600px">
             {% endif %}
             <p class="song-title"> {{ post.title }}</p></a>

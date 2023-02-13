@@ -3,12 +3,16 @@ from django.contrib.auth.models import User
 from embed_video.fields import EmbedVideoField
 
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
+
+    
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    sku = models.CharField(max_length=254, null=True, blank=True)
     featured_image = models.ImageField(blank=True, upload_to='website')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -27,13 +31,14 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comments")
-                           
+                             related_name="comments")                
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True
+        )
     approved = models.BooleanField(default=False)
 
     class Meta:
