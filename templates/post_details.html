@@ -55,44 +55,25 @@
 
         {% block review %}
         <div class="row">
-            <div class="col card mb-4  mt-3 ">
-                <h3 class="comment-heading">Comments:</h3>
+            <div class="col-md-8 card mb-4  mt-3 ">
+                <h3 class="comment-heading" >Comments:</h3>
                 <div class="card-body">
                     {% if user.is_authenticated %}
                     <a href="{% url 'createComment' post.id %}" class="button btn btn-primary">
-                        Add Review
+                        Add Comment
                     </a>
                     {% endif %}
-                    {% for comment in post.comments.all %}
-                    {% if user.is_authenticated and user == comment.user %}
-                    <a class="button btn btn-primary me-2" href="{% url 'updateComment' comment.id %}">
-                        Update
-                    </a>
-                    <a class="button btn btn-danger"
-                    href="{% url 'deleteComment' comment.id %}">
-                    Delete
-                  </a>
-                  {% endif %}
-        
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 card mb-4  mt-3 ">
-                <h3>Comments:</h3>
-                <div class="card-body">
-                    
                     {% for comment in comments %}
+                    <hr>
                     <div class="comments" style="padding: 10px;">
                         <p class="font-weight-bold">
                             
-                            {{ comment.name }}
-                            <span class=" text-muted font-weight-normal">
+                            <p>{{ comment.created_on }}</p>
+                            <p class=" font-weight-normal">
                               
-                                {{ comment.created_on }}
-                            </span> wrote:
+                                  {{ user.username }} wrote:
+                            </p> 
+                           
                         </p>
                    
                         {{ comment.body | linebreaks }}
@@ -106,15 +87,19 @@
                     Delete
                   </a>
                   {% endif %}
-                    <!-- Our for loop ends here -->
                     {% endfor %}
                 </div>
             </div>
-        
-        
-        
         {% endblock review %}
 
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="alert alert-success  message {{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+      
+        {% endif %}
 
     </div>
 </div>
