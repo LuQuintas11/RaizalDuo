@@ -24,21 +24,54 @@ class PostList(generic.ListView):
 
 
 
-def PostDetail(request, post_id):
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(Post, id=post_id)
-    comments = post.comments.filter(approved=True).order_by("-created_on")
-   
-    liked =  request.user in post.likes.all()
+class PostDetail(View):
+  
+    def get(self, request, post_id, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, id=post_id)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked =  request.user in post.likes.all()
 
 
-    context={ 
+        context={ 
         "post": post,
         "comments": comments,
+        "commented": False,
         "liked": liked, 
-        "video": post.video.filter(), }
+        "video": post.video.filter(), 
+        "comment_form": CommentForm()}
 
-    return render(request, "post_details.html", context)
+        
+        return render(request, "post_details.html", context)
+    
+    def post(self, request, post_id, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, id=post_id)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked =  request.user in post.likes.all()
+
+        form.as_p = CommentForm(request.POST)
+        if form.as_p.is_valid():
+            form.as_p.instance.email = request.user.email
+            form.as_p.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            form.as_p = CommentForm()
+
+        return render(
+            request,
+            "post_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": True,
+                "comment_form": comment_form,
+                "liked": liked,
+                "video": post.video.filter(),
+            },
+        )
 
 
 @login_required

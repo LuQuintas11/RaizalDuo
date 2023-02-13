@@ -64,19 +64,6 @@
                     </a>
                     {% endif %}
                     {% for comment in post.comments.all %}
-                    <div class="review" style="padding: 10px;">
-                        <p class="font-weight-bold">
-                            <span class="font-weight-light">
-                                {{ comment.created_on }}
-                            </span> wrote:
-                        </p>
-                        <!-- The body of the review goes before the | -->
-                        {{ comment.body | linebreaks }}
-                    </div>
-        
-        
-        
-        
                     {% if user.is_authenticated and user == comment.user %}
                     <a class="button btn btn-primary me-2" href="{% url 'updateComment' comment.id %}">
                         Update
@@ -85,73 +72,50 @@
                     href="{% url 'deleteComment' comment.id %}">
                     Delete
                   </a>
-        
-                    {% endif %}
+                  {% endif %}
         
                     {% endfor %}
                 </div>
             </div>
         </div>
-        
+
+        <div class="row">
+            <div class="col-md-8 card mb-4  mt-3 ">
+                <h3>Comments:</h3>
+                <div class="card-body">
+                    
+                    {% for comment in comments %}
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            
+                            {{ comment.name }}
+                            <span class=" text-muted font-weight-normal">
+                              
+                                {{ comment.created_on }}
+                            </span> wrote:
+                        </p>
+                   
+                        {{ comment.body | linebreaks }}
+                    </div>
+                    {% if user.is_authenticated and user == comment.user %}
+                    <a class="button btn btn-primary me-2" href="{% url 'updateComment' comment.id %}">
+                        Update
+                    </a>
+                    <a class="button btn btn-danger"
+                    href="{% url 'deleteComment' comment.id %}">
+                    Delete
+                  </a>
+                  {% endif %}
+                    <!-- Our for loop ends here -->
+                    {% endfor %}
+                </div>
+            </div>
         
         
         
         {% endblock review %}
 
-        <!-- <div class="col-md-6 comments">
 
-            <hr>
-
-            <div class="row">
-
-                <div class="col card mb-4  mt-3 ">
-                    <h3 class="comment-heading">Comments:</h3>
-                    <div class="card-body">
-                        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                        <!-- {% for comment in comments %} -->
-                        <!-- <div class="comments" style="padding: 10px;">
-                            <p class="font-weight-bold"> -->
-                                <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                                <!-- {{ comment.name }} -->
-                                <!-- <span class="font-weight-light"> -->
-                                    <!-- The comment's created date goes here -->
-                                    <!-- {{ comment.created_on }} -->
-                                <!-- </span> wrote: -->
-                            <!-- </p> -->
-                            <!-- The body of the comment goes before the | -->
-                            <!-- {{ comment.body | linebreaks }} -->
-                        <!-- </div> -->
-                        <!-- Our for loop ends here -->
-                        <!-- {% endfor %}
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col card mb-4  mt-3 ">
-                    <div class="card-body"> -->
-                        <!-- For later -->
-
-<!-- 
-                        {% if user.is_authenticated %}
-                        {% if commented %}
-                        <div class="alert alert-success" role="alert">
-                            Your comment is awaiting approval
-                        </div>
-                        {% else %}
-
-                        <h3 class="comment-heading">Leave a comment:</h3>
-                        <p>Posting as: {{ user.username }}</p>
-                        <form method="post" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                        </form>
-                        {% endif %}
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
 {% endblock content %}
