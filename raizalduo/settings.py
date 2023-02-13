@@ -31,7 +31,9 @@ CSRF_TRUSTED_ORIGINS = ['https://*8000-luquintas11-raizalduo-id25c2xszib.ws-us86
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  'DEVELOPMENT' in os.environ
+development = os.environ.get('DEVELOPMENT', False)
+
+DEBUG =  development
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -53,7 +55,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'cloudinary_storage',
     'embed_video',
+    'cloudinary',
     'website',
 ]
 
@@ -134,11 +138,13 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
