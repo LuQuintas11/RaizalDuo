@@ -84,6 +84,15 @@ def updateComment(request, comment_id):
                 {"comment": comment, "form": form, "error": "Bad data in form"},
             )
 
+            
+@login_required
+def deleteComment(request,id):
+    comment = get_object_or_404(Comment(), pk=comment_id,
+      user=request.user)
+    comment.delete()
+    return redirect(reverse('PostDetail', args=[comment.post.id]))
+
+
 
 def PostLike(request, id):
     post = get_object_or_404(Post, id=id)
@@ -94,3 +103,4 @@ def PostLike(request, id):
     post.save()
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
    
+

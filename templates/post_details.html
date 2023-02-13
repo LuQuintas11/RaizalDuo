@@ -81,6 +81,11 @@
                     <a class="btn btn-primary me-2" href="{% url 'updateComment' comment.id %}">
                         Update
                     </a>
+                    <a class="btn btn-danger"
+                    href="{% url 'deleteComment' comment.id 
+                      %}">
+                    Delete
+                  </a>
         
                     {% endif %}
         
