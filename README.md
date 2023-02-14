@@ -219,6 +219,8 @@ There were several actions required to get to this score:
          ![this is a image](/static/media/images/time.png)
          ![this is image](/static/media/images/queries.png)
          I do not have access to this queries
+     5. Replace embeb videos with a Facade: videos are upload in admin panel to give the admin user the possibility to replace those videos or delete them
+     6. Set wight and height to iamges: images have wifht and height 
   
 The Accecibility score is 94. It suggest to improve it:
 

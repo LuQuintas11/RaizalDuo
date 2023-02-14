@@ -64,7 +64,6 @@ INSTALLED_APPS = [
     "website",
     "django_summernote",
     "embed_video",
-    "debug_toolbar",
 ]
 
 SITE_ID = 1
@@ -90,7 +89,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+  
 ]
 
 ROOT_URLCONF = "raizalduo.urls"
@@ -163,8 +162,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_EMAIL_VERIFICATION = "none"
-INTERNAL_IPS = [
-    # ...
-    "127.0.0.1",
-    # ...
-]

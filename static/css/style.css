@@ -140,7 +140,7 @@ img {
     border-radius: 2%;
     border: 1px solid white;
     width: 350px;
-    max-height: 450px;
+    height: auto;
     margin: 0px auto;
 
 
