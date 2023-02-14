@@ -285,15 +285,11 @@ h5 {
 }
 
 
-element.style {
-}
 
 
-textarea.form-control {
-    min-height: calc(1.5em + 0.75rem + 2px);
-}
 
-/****** messaging *****/
+
+/****** messages *****/
 
 .message{
   height: 100px;
