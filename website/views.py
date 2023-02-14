@@ -42,7 +42,7 @@ def PostDetail(request, post_id, *args, **kwargs):
         )
 
 
-@login_required
+
 def createComment(request, post_id):
     post = get_object_or_404(Post,pk=post_id) 
     if request.method == 'GET':
