@@ -1,4 +1,4 @@
-## Porpuse
+## Purp0se
 
 This website was created to complete the fourth Milestone Project for Code Insitute's Full Stack Software Developer course. It is about a real music band, Raizal Duo. It was made based on specific requirements by the members of the band.
 
@@ -6,7 +6,7 @@ Users of this website are able to listen the new EP released by the band, like a
 
 You can find the link to the live website right  [here ](https://raizalduo.herokuapp.com/)
 
-![This is an image](/media/website/responsive.png)
+![This is an image](/static/media/images/responsive.png)
 
 
 ## Technologies used
@@ -45,7 +45,7 @@ This project was made for a real customer so I tried to follow as many as agile 
 I used Github user stories to keep track of the features that were already done and the ones I had to do
 
 
-![This is an image](/media/website/user%20stories.png)
+![This is an image](/static/media/images/user%20stories.png)
 
 ## User Experience
 
@@ -83,41 +83,43 @@ The navigation and footer features are present in the three pages:
 
 Feature at the top of the page, the navigation shows the name of the music band in the center: Raizal. To the left of the name shows  **home** and **sign up/log in** links. To the right of the name shows social media links 
 
-![This is an image](/media/website/Nav.png)
+![This is an image](/static/media/images/Nav.png)
 
 **sign up/log in** section:
 
-![This is an image](/media/website/Sign-up.png)
+![This is an image](/static/media/images/Sign-up.png)
 
 
 **Footer**
 
 The footer includes social media icons to the users can find the band on spotify, instagram and youtube channel.
 
-![This is an image](/media/website/Social%20media.png)
+![This is an image](/static/media/images/Social%20media.png)
 
 1. **Home Page**
 
 The home page has a main section with a small text explain the origins of the band. Bellow to this small text there is a video showing the band playing, offering an eye catching content to grab users attention.
 
 
-![This is an image](/media/website/Main-Video.png)
+![This is an image](/static/media/images/Main-Video.png)
 
 Below the main section there is a show section. In this section, users can check the upcoming shows and presentations. 
 
 
-![This is an image](/media/website/Shows.png)
+![This is an image](/static/media/images/Shows.png)
 
 The last section it shows the last EP of the band. There is a post for each song of the album. There is a small text explaining how was recorded
 
-![This is an image](/media/website/Music.png)
+![This is an image](/static/media/images/Music.png)
 
 
 2. **Second Page**
 
-When the user clicks on any post on the main page it takes him to the music video of said post. Beside the video there is the comment section; The user can leave a comment and see other user's comments. Below the video the user can like and see other user's likes. 
+When the user clicks on any post on the main page it takes him to the music video of said post. Beside the video there is the comment section; The user can leave/update or delete a comment and see other user's comments. Below the video the user can like and see other user's likes. 
 
-![This is an image](/media/website/Secondary%20Video.png)
+![This is an image](/static/media/images/Secondary%20Video.png)
+
+![This is an image](/static/media/images/CRUD.png)
 
 
 ## Testing
@@ -152,6 +154,13 @@ During the development process, I was manually testing in the following ways:
     The footer was at the middle of the page 
   *Soluction Used*:
     Used position:fixed
+
+4. **Intended Outcome** - Set DEBUG=False to deploy project
+
+*Issue Found*:
+  Static and media was not loaded in the deployed project
+*Solution Used*:
+ Set Cloudinary variable in heroku and upload pictures again in admin
 
 
 ## Post Development Testing
