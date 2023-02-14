@@ -64,6 +64,9 @@
                     <a href="{% url 'createComment' post.id %}" class="button btn btn-primary">
                         Add Comment
                     </a>
+                    {% else %}
+                        <p>to leave a comment <a class="nav-link text-white" href="{% url 'account_signup' %}">Register</a> or
+                        <a class="nav-link text-white" href="{% url 'account_login' %}">Login</a>if you already have an account</p>
                     {% endif %}
                     {% for comment in comments %}
                     <hr>
