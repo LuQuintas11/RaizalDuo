@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0008_lucia_alter_show_options'),
+        ("website", "0008_lucia_alter_show_options"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='lucia',
-            name='slug',
+            model_name="lucia",
+            name="slug",
             field=models.SlugField(default=0, max_length=200, unique=True),
             preserve_default=False,
         ),

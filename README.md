@@ -170,15 +170,27 @@ During the development process, I was manually testing in the following ways:
 HTML-[HTML validator ](https://validator.w3.org/)
 
 *Issue Found*:
-![This is an image](/media/website/htmlvalidator.png)
+Post_detail.html
+![This is an image](/static/media/images/base.html.png)
+
+Base.html:
+
+![This is an image](/static/media/images/postdetail.html.png)
 
 All the issues were fixed except for the iframe issue; I do no have access to this element. This element come from the youtube video url uploaded.
 
+createComment.html and updateComment.html:
+
+![This is an image](/static/media/images/createComment.html.png)
+
 CSS-[CSS validator ](https://jigsaw.w3.org/css-validator/validator)
 
-All pages tested, no issues found via URL or file upload.
 
-![This is an image](/media/website/cssvalidator.png)
+
+Pycodestyle was run on every python code:
+No big issues found, just too long line that were left like that for a readability issues
+
+![This is a image](/static/media/images/pycodestyle.png)
 
 ## Lighthouse Scores
 
@@ -189,7 +201,7 @@ I ran the tests for both mobile and desktop.
 
 **Desktop Version**:
 
-![This is an image](/media/website/desktopper.png)
+![This is an image](/static/media/images/desktopper.png)
 
 
 There were several actions required to get to this score:
@@ -203,7 +215,10 @@ There were several actions required to get to this score:
 
     4. Reduce server response time: DJango documentation suggests several things to improve this like:
          Use caching: I did set caching in the setting file. This improve the perfomance but I have to remove it because it was compromising the log in. The perfomance score it stayed good enough 
-         Reduce Queries: I  went through my code and I did noy find the way to reduce the amount of queries 
+         Reduce Queries: I run django-debug-tool to check the project queries. The majority of queries that are affecting the run time are this:
+         ![this is a image](/static/media/images/time.png)
+         ![this is image](/static/media/images/queries.png)
+         I do not have access to this queries
   
 The Accecibility score is 94. It suggest to improve it:
 
@@ -214,7 +229,7 @@ The Accecibility score is 94. It suggest to improve it:
 
 **Mobile Version**:
 
-![This is an image](/media/website/performance.png)
+![This is an image](/static/media/images/performance.png)
 
 The same issues mentioned before ( desktop score ) were found and the same actions were taken 
 

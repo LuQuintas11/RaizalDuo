@@ -4,19 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0012_alter_post_status'),
+        ("website", "0012_alter_post_status"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='post',
-            name='image',
+            model_name="post",
+            name="image",
         ),
         migrations.AlterField(
-            model_name='post',
-            name='status',
-            field=models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0),
+            model_name="post",
+            name="status",
+            field=models.IntegerField(
+                choices=[(0, "Draft"), (1, "Published")], default=0
+            ),
         ),
     ]

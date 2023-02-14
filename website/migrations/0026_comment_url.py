@@ -5,15 +5,14 @@ import embed_video.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0025_remove_video_video_videomusic_video'),
+        ("website", "0025_remove_video_video_videomusic_video"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='comment',
-            name='url',
+            model_name="comment",
+            name="url",
             field=embed_video.fields.EmbedVideoField(default=1),
         ),
     ]

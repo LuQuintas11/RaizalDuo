@@ -4,24 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0021_remove_post_video'),
+        ("website", "0021_remove_post_video"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='video',
-            options={'ordering': ['-status']},
+            name="video",
+            options={"ordering": ["-status"]},
         ),
         migrations.RenameField(
-            model_name='video',
-            old_name='video',
-            new_name='url',
+            model_name="video",
+            old_name="video",
+            new_name="url",
         ),
         migrations.AlterField(
-            model_name='video',
-            name='title',
+            model_name="video",
+            name="title",
             field=models.CharField(default=1, max_length=200),
         ),
     ]

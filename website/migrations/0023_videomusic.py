@@ -5,22 +5,34 @@ import embed_video.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0022_alter_video_options_rename_video_video_url_and_more'),
+        ("website", "0022_alter_video_options_rename_video_video_url_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='VideoMusic',
+            name="VideoMusic",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(default=1, max_length=200)),
-                ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=1)),
-                ('url', embed_video.fields.EmbedVideoField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(default=1, max_length=200)),
+                (
+                    "status",
+                    models.IntegerField(
+                        choices=[(0, "Draft"), (1, "Published")], default=1
+                    ),
+                ),
+                ("url", embed_video.fields.EmbedVideoField()),
             ],
             options={
-                'ordering': ['-status'],
+                "ordering": ["-status"],
             },
         ),
     ]

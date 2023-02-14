@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0011_alter_video_options_video_title'),
+        ("website", "0011_alter_video_options_video_title"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='post',
-            name='status',
-            field=models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=1),
+            model_name="post",
+            name="status",
+            field=models.IntegerField(
+                choices=[(0, "Draft"), (1, "Published")], default=1
+            ),
         ),
     ]

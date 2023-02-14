@@ -5,17 +5,24 @@ import embed_video.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0005_rename_show_shows_title'),
+        ("website", "0005_rename_show_shows_title"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Video',
+            name="Video",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url', embed_video.fields.EmbedVideoField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("url", embed_video.fields.EmbedVideoField()),
             ],
         ),
     ]

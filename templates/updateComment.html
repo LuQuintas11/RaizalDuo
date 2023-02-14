@@ -9,7 +9,7 @@
           {{ error }}
         </div>
         {% endif %}
-        <p class="card-text">
+        
           <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
@@ -17,7 +17,7 @@
               Update Comment
             </button>
           </form>
-        </p>
+        
       </div>
     </div>
   </div>

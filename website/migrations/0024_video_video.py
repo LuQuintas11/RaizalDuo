@@ -5,15 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0023_videomusic'),
+        ("website", "0023_videomusic"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='video',
-            name='video',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='video', to='website.post'),
+            model_name="video",
+            name="video",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="video",
+                to="website.post",
+            ),
         ),
     ]

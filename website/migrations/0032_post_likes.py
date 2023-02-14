@@ -5,16 +5,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('website', '0031_remove_post_author_remove_post_content_and_more'),
+        ("website", "0031_remove_post_author_remove_post_content_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='likes',
-            field=models.ManyToManyField(blank=True, related_name='blogpost_like', to=settings.AUTH_USER_MODEL),
+            model_name="post",
+            name="likes",
+            field=models.ManyToManyField(
+                blank=True, related_name="blogpost_like", to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

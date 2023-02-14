@@ -4,19 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0006_video'),
+        ("website", "0006_video"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='Shows',
-            new_name='Show',
+            old_name="Shows",
+            new_name="Show",
         ),
         migrations.AddField(
-            model_name='video',
-            name='status',
-            field=models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0),
+            model_name="video",
+            name="status",
+            field=models.IntegerField(
+                choices=[(0, "Draft"), (1, "Published")], default=0
+            ),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0029_alter_comment_approved'),
+        ("website", "0029_alter_comment_approved"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='comment',
-            name='approved',
+            model_name="comment",
+            name="approved",
             field=models.BooleanField(default=False),
         ),
     ]

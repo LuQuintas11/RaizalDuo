@@ -4,30 +4,29 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('website', '0030_alter_comment_approved'),
+        ("website", "0030_alter_comment_approved"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='post',
-            name='author',
+            model_name="post",
+            name="author",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='content',
+            model_name="post",
+            name="content",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='excerpt',
+            model_name="post",
+            name="excerpt",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='likes',
+            model_name="post",
+            name="likes",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='updated_on',
+            model_name="post",
+            name="updated_on",
         ),
     ]
