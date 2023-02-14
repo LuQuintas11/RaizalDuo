@@ -55,7 +55,7 @@ I used Github user stories to keep track of the features that were already done 
 
 **As a Site User** I can register an account so that **I can comment and like**.
 
-**As a Site User** I can leave comments on a song so that **I can be involved in the conversation**.
+**As a Site User** I can leave/update or delete comments on a song so that **I can be involved in the conversation**.
 
 **As a Site User** I can like or unlike a song so that **I can interact with the content**.
 
