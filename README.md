@@ -1,4 +1,4 @@
-## Purp0se
+## Purpose
 
 This website was created to complete the fourth Milestone Project for Code Insitute's Full Stack Software Developer course. It is about a real music band, Raizal Duo. It was made based on specific requirements by the members of the band.
 
@@ -221,6 +221,7 @@ There were several actions required to get to this score:
          I do not have access to this queries
      5. Replace embeb videos with a Facade: videos are upload in admin panel to give the admin user the possibility to replace those videos or delete them
      6. Set wight and height to iamges: images have wifht and height 
+     7. Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance: I do not have acces to the addListener that is pointing 
   
 The Accecibility score is 94. It suggest to improve it:
 
@@ -253,7 +254,7 @@ The project was deployed on Heroku. Here are the steps to achieve this:
 * The icons in the footer were taken from Font Awesome  https://fontawesome.com/start
 * The font-family was imported from https://fonts.google.com/
 * The images and videos were given for Raizal Duo band. 
-* I want to give credits to my tutor Sandeep Aggarwal. 
+* I want to give credits to my tutor Sandeep Aggarwal and Oisin from tutoring session
 
 
 
